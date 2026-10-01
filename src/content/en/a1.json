@@ -1,0 +1,246 @@
+{
+  "language": "en",
+  "level": "A1",
+  "units": [
+    {
+      "id": "greetings",
+      "title": { "de": "Begrüßungen", "fr": "Salutations" },
+      "lessons": [
+        {
+          "id": "greetings-1",
+          "title": { "de": "Hallo und tschüss", "fr": "Bonjour et au revoir" },
+          "items": [
+            { "id": "greetings-1-1", "kind": "word", "text": "Hello", "gloss": { "de": "Hallo", "fr": "Salut" }, "prompt": { "de": "Begrüße einen Freund", "fr": "Dis bonjour à un ami" } },
+            { "id": "greetings-1-2", "kind": "phrase", "text": "Good morning", "gloss": { "de": "Guten Morgen", "fr": "Bonjour (le matin)" }, "prompt": { "de": "Begrüße jemanden am Morgen", "fr": "Salue quelqu'un le matin" } },
+            { "id": "greetings-1-3", "kind": "word", "text": "Goodbye", "gloss": { "de": "Auf Wiedersehen", "fr": "Au revoir" }, "prompt": { "de": "Verabschiede dich höflich", "fr": "Dis au revoir poliment" } },
+            { "id": "greetings-1-4", "kind": "phrase", "text": "See you tomorrow!", "gloss": { "de": "Bis morgen!", "fr": "À demain !" }, "prompt": { "de": "Sag, dass ihr euch morgen seht", "fr": "Dis que vous vous voyez demain" } },
+            { "id": "greetings-1-5", "kind": "sentence", "text": "How are you?", "gloss": { "de": "Wie geht es dir?", "fr": "Comment ça va ?" }, "prompt": { "de": "Frag, wie es jemandem geht", "fr": "Demande comment va quelqu'un" } }
+          ],
+          "rolePlay": {
+            "topic": "Meeting your neighbour in the morning",
+            "goal": { "de": "Begrüße deinen Nachbarn, frag, wie es ihm geht, und verabschiede dich.", "fr": "Salue ton voisin, demande-lui comment il va et dis au revoir." },
+            "opening": "Good morning! How are you?",
+            "starterLines": ["Good morning!", "I'm fine, thanks."]
+          }
+        },
+        {
+          "id": "greetings-2",
+          "title": { "de": "Sich vorstellen", "fr": "Se présenter" },
+          "items": [
+            { "id": "greetings-2-1", "kind": "sentence", "text": "My name is Anna.", "gloss": { "de": "Ich heiße Anna.", "fr": "Je m'appelle Anna." }, "prompt": { "de": "Sag, dass du Anna heißt", "fr": "Dis que tu t'appelles Anna" } },
+            { "id": "greetings-2-2", "kind": "sentence", "text": "What's your name?", "gloss": { "de": "Wie heißt du?", "fr": "Comment tu t'appelles ?" }, "prompt": { "de": "Frag nach dem Namen", "fr": "Demande le prénom de quelqu'un" } },
+            { "id": "greetings-2-3", "kind": "phrase", "text": "Nice to meet you!", "gloss": { "de": "Freut mich!", "fr": "Enchanté !" }, "prompt": { "de": "Sag, dass du dich freust, die Person kennenzulernen", "fr": "Dis que tu es ravi de faire sa connaissance" } },
+            { "id": "greetings-2-4", "kind": "word", "text": "Please", "gloss": { "de": "Bitte", "fr": "S'il vous plaît" }, "prompt": { "de": "Sag es höflich", "fr": "Demande poliment" } },
+            { "id": "greetings-2-5", "kind": "phrase", "text": "Thank you", "gloss": { "de": "Danke", "fr": "Merci" }, "prompt": { "de": "Bedanke dich", "fr": "Remercie quelqu'un" } }
+          ],
+          "rolePlay": {
+            "topic": "Meeting someone new at a party",
+            "goal": { "de": "Stell dich vor, frag nach dem Namen und sag, dass du dich freust.", "fr": "Présente-toi, demande son prénom et dis que tu es ravi de le rencontrer." },
+            "opening": "Hi! My name is Sam. What's your name?",
+            "starterLines": ["My name is ...", "Nice to meet you!"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "title": { "de": "Zahlen und Uhrzeit", "fr": "Les nombres et l'heure" },
+      "lessons": [
+        {
+          "id": "numbers-1",
+          "title": { "de": "Zahlen von 1 bis 10", "fr": "Les nombres de 1 à 10" },
+          "items": [
+            { "id": "numbers-1-1", "kind": "word", "text": "one", "gloss": { "de": "eins", "fr": "un" }, "prompt": { "de": "Sag die Zahl 1", "fr": "Dis le nombre 1" } },
+            { "id": "numbers-1-2", "kind": "word", "text": "two", "gloss": { "de": "zwei", "fr": "deux" }, "prompt": { "de": "Sag die Zahl 2", "fr": "Dis le nombre 2" } },
+            { "id": "numbers-1-3", "kind": "word", "text": "three", "gloss": { "de": "drei", "fr": "trois" }, "prompt": { "de": "Sag die Zahl 3", "fr": "Dis le nombre 3" } },
+            { "id": "numbers-1-4", "kind": "word", "text": "ten", "gloss": { "de": "zehn", "fr": "dix" }, "prompt": { "de": "Sag die Zahl 10", "fr": "Dis le nombre 10" } },
+            { "id": "numbers-1-5", "kind": "sentence", "text": "I'd like three tickets, please.", "gloss": { "de": "Ich möchte drei Tickets, bitte.", "fr": "Je voudrais trois billets, s'il vous plaît." }, "prompt": { "de": "Bitte um drei Tickets", "fr": "Demande trois billets" } }
+          ],
+          "rolePlay": {
+            "topic": "Buying tickets at a cinema counter",
+            "goal": { "de": "Frag nach Tickets und wie viel sie kosten.", "fr": "Demande des billets et combien ils coûtent." },
+            "opening": "Hello! How many tickets would you like?",
+            "starterLines": ["Two tickets, please.", "How much is that?"]
+          }
+        },
+        {
+          "id": "numbers-2",
+          "title": { "de": "Die Uhrzeit", "fr": "Dire l'heure" },
+          "items": [
+            { "id": "numbers-2-1", "kind": "sentence", "text": "What time is it?", "gloss": { "de": "Wie spät ist es?", "fr": "Quelle heure est-il ?" }, "prompt": { "de": "Frag nach der Uhrzeit", "fr": "Demande l'heure" } },
+            { "id": "numbers-2-2", "kind": "sentence", "text": "It's eight o'clock.", "gloss": { "de": "Es ist acht Uhr.", "fr": "Il est huit heures." }, "prompt": { "de": "Sag, dass es 8:00 Uhr ist", "fr": "Dis qu'il est 8 h 00" } },
+            { "id": "numbers-2-3", "kind": "word", "text": "today", "gloss": { "de": "heute", "fr": "aujourd'hui" }, "prompt": { "de": "Sag das Wort für heute", "fr": "Dis le mot pour aujourd'hui" } },
+            { "id": "numbers-2-4", "kind": "word", "text": "tomorrow", "gloss": { "de": "morgen", "fr": "demain" }, "prompt": { "de": "Sag das Wort für morgen", "fr": "Dis le mot pour demain" } },
+            { "id": "numbers-2-5", "kind": "sentence", "text": "Shall we meet at nine?", "gloss": { "de": "Treffen wir uns um neun?", "fr": "On se retrouve à neuf heures ?" }, "prompt": { "de": "Schlag vor, euch um neun zu treffen", "fr": "Propose de se retrouver à neuf heures" } }
+          ],
+          "rolePlay": {
+            "topic": "Arranging a time to meet a friend",
+            "goal": { "de": "Vereinbart einen Tag und eine Uhrzeit.", "fr": "Mettez-vous d'accord sur un jour et une heure." },
+            "opening": "Are you free tomorrow?",
+            "starterLines": ["Yes, I'm free tomorrow.", "Shall we meet at nine?"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "title": { "de": "Essen und Trinken", "fr": "Manger et boire" },
+      "lessons": [
+        {
+          "id": "food-1",
+          "title": { "de": "Im Café", "fr": "Au café" },
+          "items": [
+            { "id": "food-1-1", "kind": "word", "text": "coffee", "gloss": { "de": "der Kaffee", "fr": "le café" }, "prompt": { "de": "Sag das Wort für Kaffee", "fr": "Dis le mot pour café" } },
+            { "id": "food-1-2", "kind": "word", "text": "water", "gloss": { "de": "das Wasser", "fr": "l'eau" }, "prompt": { "de": "Sag das Wort für Wasser", "fr": "Dis le mot pour eau" } },
+            { "id": "food-1-3", "kind": "sentence", "text": "I'd like a coffee, please.", "gloss": { "de": "Ich hätte gern einen Kaffee, bitte.", "fr": "Je voudrais un café, s'il vous plaît." }, "prompt": { "de": "Bestelle einen Kaffee", "fr": "Commande un café" } },
+            { "id": "food-1-4", "kind": "phrase", "text": "with milk", "gloss": { "de": "mit Milch", "fr": "avec du lait" }, "prompt": { "de": "Sag, dass du ihn mit Milch willst", "fr": "Dis que tu le veux avec du lait" } },
+            { "id": "food-1-5", "kind": "sentence", "text": "The bill, please.", "gloss": { "de": "Die Rechnung, bitte.", "fr": "L'addition, s'il vous plaît." }, "prompt": { "de": "Bitte um die Rechnung", "fr": "Demande l'addition" } }
+          ],
+          "rolePlay": {
+            "topic": "Ordering at a café",
+            "goal": { "de": "Bestelle ein Getränk, sag, wie du es möchtest, und bitte um die Rechnung.", "fr": "Commande une boisson, dis comment tu la veux et demande l'addition." },
+            "opening": "Hi there! What can I get you?",
+            "starterLines": ["A coffee with milk, please.", "The bill, please."]
+          }
+        },
+        {
+          "id": "food-2",
+          "title": { "de": "Im Restaurant", "fr": "Au restaurant" },
+          "items": [
+            { "id": "food-2-1", "kind": "word", "text": "bread", "gloss": { "de": "das Brot", "fr": "le pain" }, "prompt": { "de": "Sag das Wort für Brot", "fr": "Dis le mot pour pain" } },
+            { "id": "food-2-2", "kind": "sentence", "text": "A table for two, please.", "gloss": { "de": "Einen Tisch für zwei, bitte.", "fr": "Une table pour deux, s'il vous plaît." }, "prompt": { "de": "Frag nach einem Tisch für zwei", "fr": "Demande une table pour deux" } },
+            { "id": "food-2-3", "kind": "sentence", "text": "What do you recommend?", "gloss": { "de": "Was empfehlen Sie?", "fr": "Qu'est-ce que vous recommandez ?" }, "prompt": { "de": "Frag nach einer Empfehlung", "fr": "Demande une recommandation" } },
+            { "id": "food-2-4", "kind": "sentence", "text": "I'm vegetarian.", "gloss": { "de": "Ich bin Vegetarier.", "fr": "Je suis végétarien." }, "prompt": { "de": "Sag, dass du kein Fleisch isst", "fr": "Dis que tu ne manges pas de viande" } },
+            { "id": "food-2-5", "kind": "sentence", "text": "That was delicious!", "gloss": { "de": "Das war lecker!", "fr": "C'était délicieux !" }, "prompt": { "de": "Sag, dass das Essen lecker war", "fr": "Dis que le repas était délicieux" } }
+          ],
+          "rolePlay": {
+            "topic": "Ordering dinner at a restaurant",
+            "goal": { "de": "Frag nach einem Tisch und einer Empfehlung und bestelle ein Essen.", "fr": "Demande une table et une recommandation, puis commande un plat." },
+            "opening": "Good evening! Do you have a reservation?",
+            "starterLines": ["No. A table for two, please.", "What do you recommend?"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "directions",
+      "title": { "de": "Wegbeschreibungen", "fr": "Demander son chemin" },
+      "lessons": [
+        {
+          "id": "directions-1",
+          "title": { "de": "Wo ist ...?", "fr": "Où est... ?" },
+          "items": [
+            { "id": "directions-1-1", "kind": "phrase", "text": "Excuse me", "gloss": { "de": "Entschuldigung", "fr": "Excusez-moi" }, "prompt": { "de": "Sprich jemanden höflich an", "fr": "Interpelle quelqu'un poliment" } },
+            { "id": "directions-1-2", "kind": "sentence", "text": "Where is the train station?", "gloss": { "de": "Wo ist der Bahnhof?", "fr": "Où est la gare ?" }, "prompt": { "de": "Frag, wo der Bahnhof ist", "fr": "Demande où est la gare" } },
+            { "id": "directions-1-3", "kind": "word", "text": "left", "gloss": { "de": "links", "fr": "à gauche" }, "prompt": { "de": "Sag das Wort für links", "fr": "Dis le mot pour gauche" } },
+            { "id": "directions-1-4", "kind": "word", "text": "right", "gloss": { "de": "rechts", "fr": "à droite" }, "prompt": { "de": "Sag das Wort für rechts", "fr": "Dis le mot pour droite" } },
+            { "id": "directions-1-5", "kind": "phrase", "text": "straight ahead", "gloss": { "de": "geradeaus", "fr": "tout droit" }, "prompt": { "de": "Sag, dass es geradeaus geht", "fr": "Dis d'aller tout droit" } }
+          ],
+          "rolePlay": {
+            "topic": "Asking a stranger the way to the train station",
+            "goal": { "de": "Sprich jemanden an, frag nach dem Bahnhof und bedanke dich.", "fr": "Interpelle quelqu'un, demande où est la gare et remercie-le." },
+            "opening": "Yes? Can I help you?",
+            "starterLines": ["Excuse me, where is the train station?", "Thank you very much!"]
+          }
+        },
+        {
+          "id": "directions-2",
+          "title": { "de": "Unterwegs", "fr": "Se déplacer" },
+          "items": [
+            { "id": "directions-2-1", "kind": "word", "text": "bus", "gloss": { "de": "der Bus", "fr": "le bus" }, "prompt": { "de": "Sag das Wort für Bus", "fr": "Dis le mot pour bus" } },
+            { "id": "directions-2-2", "kind": "word", "text": "train", "gloss": { "de": "der Zug", "fr": "le train" }, "prompt": { "de": "Sag das Wort für Zug", "fr": "Dis le mot pour train" } },
+            { "id": "directions-2-3", "kind": "sentence", "text": "How do I get to the museum?", "gloss": { "de": "Wie komme ich zum Museum?", "fr": "Comment aller au musée ?" }, "prompt": { "de": "Frag, wie du zum Museum kommst", "fr": "Demande comment aller au musée" } },
+            { "id": "directions-2-4", "kind": "sentence", "text": "Is it far?", "gloss": { "de": "Ist es weit?", "fr": "C'est loin ?" }, "prompt": { "de": "Frag, ob es weit ist", "fr": "Demande si c'est loin" } },
+            { "id": "directions-2-5", "kind": "sentence", "text": "Thanks for your help.", "gloss": { "de": "Danke für Ihre Hilfe.", "fr": "Merci pour votre aide." }, "prompt": { "de": "Bedanke dich für die Hilfe", "fr": "Remercie pour l'aide" } }
+          ],
+          "rolePlay": {
+            "topic": "Asking how to get to the museum by public transport",
+            "goal": { "de": "Frag, wie du zum Museum kommst, ob es weit ist und welchen Bus du nehmen sollst.", "fr": "Demande comment aller au musée, si c'est loin et quel bus prendre." },
+            "opening": "Hello! Where would you like to go?",
+            "starterLines": ["How do I get to the museum?", "Is it far?"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shopping",
+      "title": { "de": "Einkaufen", "fr": "Les achats" },
+      "lessons": [
+        {
+          "id": "shopping-1",
+          "title": { "de": "Im Geschäft", "fr": "Dans un magasin" },
+          "items": [
+            { "id": "shopping-1-1", "kind": "sentence", "text": "How much is this?", "gloss": { "de": "Was kostet das?", "fr": "Combien ça coûte ?" }, "prompt": { "de": "Frag nach dem Preis", "fr": "Demande le prix" } },
+            { "id": "shopping-1-2", "kind": "word", "text": "expensive", "gloss": { "de": "teuer", "fr": "cher" }, "prompt": { "de": "Sag das Wort für teuer", "fr": "Dis le mot pour cher" } },
+            { "id": "shopping-1-3", "kind": "word", "text": "cheap", "gloss": { "de": "billig", "fr": "bon marché" }, "prompt": { "de": "Sag das Wort für billig", "fr": "Dis le mot pour bon marché" } },
+            { "id": "shopping-1-4", "kind": "sentence", "text": "I'm just looking.", "gloss": { "de": "Ich schaue nur.", "fr": "Je regarde seulement." }, "prompt": { "de": "Sag, dass du nur schaust", "fr": "Dis que tu regardes seulement" } },
+            { "id": "shopping-1-5", "kind": "sentence", "text": "I'll take it.", "gloss": { "de": "Ich nehme es.", "fr": "Je le prends." }, "prompt": { "de": "Sag, dass du es kaufst", "fr": "Dis que tu l'achètes" } }
+          ],
+          "rolePlay": {
+            "topic": "Buying a souvenir at a market stall",
+            "goal": { "de": "Frag nach dem Preis, reagiere darauf und kaufe etwas.", "fr": "Demande le prix, réagis et décide d'acheter." },
+            "opening": "Hello! Are you looking for anything special?",
+            "starterLines": ["I'm just looking.", "How much is this?"]
+          }
+        },
+        {
+          "id": "shopping-2",
+          "title": { "de": "Kleidung und Größen", "fr": "Vêtements et tailles" },
+          "items": [
+            { "id": "shopping-2-1", "kind": "word", "text": "shirt", "gloss": { "de": "das Hemd", "fr": "la chemise" }, "prompt": { "de": "Sag das Wort für Hemd", "fr": "Dis le mot pour chemise" } },
+            { "id": "shopping-2-2", "kind": "word", "text": "shoes", "gloss": { "de": "die Schuhe", "fr": "les chaussures" }, "prompt": { "de": "Sag das Wort für Schuhe", "fr": "Dis le mot pour chaussures" } },
+            { "id": "shopping-2-3", "kind": "sentence", "text": "Can I try this on?", "gloss": { "de": "Kann ich das anprobieren?", "fr": "Je peux l'essayer ?" }, "prompt": { "de": "Frag, ob du es anprobieren kannst", "fr": "Demande si tu peux l'essayer" } },
+            { "id": "shopping-2-4", "kind": "sentence", "text": "It's too big.", "gloss": { "de": "Es ist zu groß.", "fr": "C'est trop grand." }, "prompt": { "de": "Sag, dass es zu groß ist", "fr": "Dis que c'est trop grand" } },
+            { "id": "shopping-2-5", "kind": "sentence", "text": "Do you have a smaller size?", "gloss": { "de": "Haben Sie eine kleinere Größe?", "fr": "Vous avez une taille plus petite ?" }, "prompt": { "de": "Frag nach einer kleineren Größe", "fr": "Demande une taille plus petite" } }
+          ],
+          "rolePlay": {
+            "topic": "Trying on clothes in a clothing shop",
+            "goal": { "de": "Frag, ob du etwas anprobieren kannst, sag, wie es passt, und frag nach einer anderen Größe.", "fr": "Demande à essayer un vêtement, dis comment il te va et demande une autre taille." },
+            "opening": "Hi! Can I help you?",
+            "starterLines": ["Can I try this on?", "Do you have a smaller size?"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "routine",
+      "title": { "de": "Der Alltag", "fr": "La vie quotidienne" },
+      "lessons": [
+        {
+          "id": "routine-1",
+          "title": { "de": "Mein Tag", "fr": "Ma journée" },
+          "items": [
+            { "id": "routine-1-1", "kind": "word", "text": "morning", "gloss": { "de": "der Morgen", "fr": "le matin" }, "prompt": { "de": "Sag das Wort für Morgen", "fr": "Dis le mot pour matin" } },
+            { "id": "routine-1-2", "kind": "word", "text": "evening", "gloss": { "de": "der Abend", "fr": "le soir" }, "prompt": { "de": "Sag das Wort für Abend", "fr": "Dis le mot pour soir" } },
+            { "id": "routine-1-3", "kind": "sentence", "text": "I get up at seven o'clock.", "gloss": { "de": "Ich stehe um sieben Uhr auf.", "fr": "Je me lève à sept heures." }, "prompt": { "de": "Sag, dass du um 7:00 Uhr aufstehst", "fr": "Dis que tu te lèves à 7 h 00" } },
+            { "id": "routine-1-4", "kind": "sentence", "text": "I have breakfast at home.", "gloss": { "de": "Ich frühstücke zu Hause.", "fr": "Je prends le petit-déjeuner à la maison." }, "prompt": { "de": "Sag, dass du zu Hause frühstückst", "fr": "Dis que tu prends le petit-déjeuner à la maison" } },
+            { "id": "routine-1-5", "kind": "sentence", "text": "I go to work by bus.", "gloss": { "de": "Ich fahre mit dem Bus zur Arbeit.", "fr": "Je vais au travail en bus." }, "prompt": { "de": "Sag, dass du mit dem Bus zur Arbeit fährst", "fr": "Dis que tu vas au travail en bus" } }
+          ],
+          "rolePlay": {
+            "topic": "Telling a new colleague about your daily routine",
+            "goal": { "de": "Erzähl, wann du aufstehst und wie du zur Arbeit kommst, und frag nach dem Tag deines Gegenübers.", "fr": "Raconte quand tu te lèves et comment tu vas au travail, puis pose des questions sur sa journée." },
+            "opening": "What time do you usually get up?",
+            "starterLines": ["I get up at seven o'clock.", "I go to work by bus."]
+          }
+        },
+        {
+          "id": "routine-2",
+          "title": { "de": "Freizeit", "fr": "Les loisirs" },
+          "items": [
+            { "id": "routine-2-1", "kind": "word", "text": "music", "gloss": { "de": "die Musik", "fr": "la musique" }, "prompt": { "de": "Sag das Wort für Musik", "fr": "Dis le mot pour musique" } },
+            { "id": "routine-2-2", "kind": "word", "text": "sport", "gloss": { "de": "der Sport", "fr": "le sport" }, "prompt": { "de": "Sag das Wort für Sport", "fr": "Dis le mot pour sport" } },
+            { "id": "routine-2-3", "kind": "sentence", "text": "I like reading.", "gloss": { "de": "Ich lese gern.", "fr": "J'aime lire." }, "prompt": { "de": "Sag, dass du gern liest", "fr": "Dis que tu aimes lire" } },
+            { "id": "routine-2-4", "kind": "sentence", "text": "At the weekend I play football.", "gloss": { "de": "Am Wochenende spiele ich Fußball.", "fr": "Le week-end, je joue au foot." }, "prompt": { "de": "Sag, dass du am Wochenende Fußball spielst", "fr": "Dis que tu joues au foot le week-end" } },
+            { "id": "routine-2-5", "kind": "sentence", "text": "What do you do in your free time?", "gloss": { "de": "Was machst du in deiner Freizeit?", "fr": "Qu'est-ce que tu fais pendant ton temps libre ?" }, "prompt": { "de": "Frag nach den Hobbys", "fr": "Demande quels sont ses loisirs" } }
+          ],
+          "rolePlay": {
+            "topic": "Chatting about hobbies with a new friend",
+            "goal": { "de": "Erzähl, was du gern machst, und frag, was die andere Person in der Freizeit macht.", "fr": "Dis ce que tu aimes faire et demande ce qu'il fait pendant son temps libre." },
+            "opening": "What do you like doing at the weekend?",
+            "starterLines": ["I like reading.", "And you? What do you do in your free time?"]
+          }
+        }
+      ]
+    }
+  ]
+}

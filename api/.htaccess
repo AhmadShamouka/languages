@@ -1,0 +1,16 @@
+Options -Indexes
+
+<FilesMatch "^(config(\.example)?\.php|schema\.sql)$">
+  Require all denied
+</FilesMatch>
+
+RewriteEngine On
+
+# Hostinger's Apache/LiteSpeed drops the Authorization header unless it is passed through.
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+RewriteRule ^lib/ - [F,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
