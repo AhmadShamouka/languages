@@ -1,5 +1,5 @@
+import { apiRequest, uploadAudio, type Profile, type Streak } from './api';
 import { localDay } from './day';
-import { apiRequest, type Profile, type Streak } from './api';
 
 export interface Utterance {
   audioUri?: string;
@@ -32,42 +32,34 @@ export interface Scenario {
   goal: string;
 }
 
-const AUDIO_TYPES: Record<string, string> = {
-  m4a: 'audio/mp4',
-  mp4: 'audio/mp4',
-  aac: 'audio/aac',
-  wav: 'audio/wav',
-  webm: 'audio/webm',
-  mp3: 'audio/mpeg',
-};
-
-function tutorForm(mode: 'check' | 'chat', profile: Profile, utterance: Utterance): FormData {
-  const form = new FormData();
-  form.append('mode', mode);
-  form.append('targetLanguage', profile.targetLanguage);
-  form.append('nativeLanguage', profile.nativeLanguage);
-  form.append('level', profile.level);
-  form.append('day', localDay());
-  if (utterance.audioUri) {
-    const extension = utterance.audioUri.split('?')[0].split('.').pop()?.toLowerCase() ?? 'm4a';
-    const type = AUDIO_TYPES[extension] ?? 'audio/mp4';
-    // React Native's FormData accepts a file descriptor object in place of a Blob.
-    form.append('audio', { uri: utterance.audioUri, name: `speech.${extension}`, type } as unknown as Blob);
-  } else if (utterance.text) {
-    form.append('text', utterance.text);
-  }
-  return form;
+function tutorFields(mode: 'check' | 'chat', profile: Profile): Record<string, string> {
+  return {
+    mode,
+    targetLanguage: profile.targetLanguage,
+    nativeLanguage: profile.nativeLanguage,
+    level: profile.level,
+    day: localDay(),
+  };
 }
 
 export function checkSpeech(profile: Profile, utterance: Utterance, expected: string) {
-  const form = tutorForm('check', profile, utterance);
-  form.append('expected', expected);
+  const fields = { ...tutorFields('check', profile), expected };
+  if (utterance.audioUri) return uploadAudio<CheckResult>('/tutor', utterance.audioUri, fields);
+  const form = new FormData();
+  for (const [key, value] of Object.entries(fields)) form.append(key, value);
+  if (utterance.text) form.append('text', utterance.text);
   return apiRequest<CheckResult>('POST', '/tutor', form);
 }
 
 export function chatTurn(profile: Profile, utterance: Utterance, scenario: Scenario, history: ChatTurn[]) {
-  const form = tutorForm('chat', profile, utterance);
-  form.append('scenario', JSON.stringify(scenario));
-  form.append('history', JSON.stringify(history));
+  const fields = {
+    ...tutorFields('chat', profile),
+    scenario: JSON.stringify(scenario),
+    history: JSON.stringify(history),
+  };
+  if (utterance.audioUri) return uploadAudio<ChatResult>('/tutor', utterance.audioUri, fields);
+  const form = new FormData();
+  for (const [key, value] of Object.entries(fields)) form.append(key, value);
+  if (utterance.text) form.append('text', utterance.text);
   return apiRequest<ChatResult>('POST', '/tutor', form);
 }

@@ -16,7 +16,7 @@ const MAX_SECONDS = 30;
  * Records one utterance at a time. `onFinished` receives the file URI when the learner
  * stops, or when the recording hits the length limit.
  */
-export function useSpeechRecorder(onFinished: (uri: string) => void) {
+export function useSpeechRecorder(onFinished: (uri: string) => void, maxSeconds = MAX_SECONDS) {
   const recorder = useAudioRecorder(RecordingPresets.HIGH_QUALITY);
   const state = useAudioRecorderState(recorder, 250);
   const [permissionDenied, setPermissionDenied] = useState(false);
@@ -52,8 +52,8 @@ export function useSpeechRecorder(onFinished: (uri: string) => void) {
   }, [recorder]);
 
   useEffect(() => {
-    if (state.isRecording && state.durationMillis >= MAX_SECONDS * 1000) void stop();
-  }, [state.isRecording, state.durationMillis, stop]);
+    if (state.isRecording && state.durationMillis >= maxSeconds * 1000) void stop();
+  }, [state.isRecording, state.durationMillis, maxSeconds, stop]);
 
   return {
     isRecording: state.isRecording,

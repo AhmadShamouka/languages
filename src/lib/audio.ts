@@ -21,7 +21,24 @@ export function playReplyAudio(base64: string) {
   stopReplyAudio();
   replyFile?.delete();
 
-  const file = new File(Paths.cache, `tutor-reply-${Date.now()}.mp3`);
+  const file = new File(Paths.cache, `tutor-reply-${Date.now()}.wav`);
+  file.create();
+  file.write(base64, { encoding: 'base64' });
+  replyFile = file;
+
+  if (!replyPlayer) replyPlayer = createAudioPlayer(null);
+  replyPlayer.replace({ uri: file.uri });
+  replyPlayer.play();
+}
+
+/** Plays a short voice clip from a call, sent by the API as base64. */
+export function playClipAudio(base64: string, extension: string) {
+  Speech.stop();
+  stopReplyAudio();
+  replyFile?.delete();
+
+  const safeExtension = /^[a-z0-9]+$/.test(extension) ? extension : 'm4a';
+  const file = new File(Paths.cache, `call-clip-${Date.now()}.${safeExtension}`);
   file.create();
   file.write(base64, { encoding: 'base64' });
   replyFile = file;

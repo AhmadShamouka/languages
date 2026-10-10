@@ -5,7 +5,7 @@ import { languageLabel } from '@/lib/i18n';
 import { spacing } from '@/theme';
 import { Chip } from './ui';
 
-export const ALL_LANGUAGES: LanguageCode[] = ['de', 'en', 'fr'];
+export const ALL_LANGUAGES: LanguageCode[] = ['en', 'de', 'fr', 'it', 'ar'];
 
 export function LanguagePicker({
   ui,

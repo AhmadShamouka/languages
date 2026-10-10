@@ -3,7 +3,7 @@ import { router } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { Card, Heading, Muted, ProgressBar, Screen, Title } from '@/components/ui';
-import { allLessons, getCourse, localize } from '@/lib/course';
+import { allLessons, getCourse, localize, writingDirection } from '@/lib/course';
 import { languageLabel, t } from '@/lib/i18n';
 import { useLearner } from '@/lib/session';
 import { colors, spacing } from '@/theme';
@@ -43,7 +43,9 @@ export default function LearnScreen() {
                 />
                 <View style={styles.lessonText}>
                   <Text style={styles.lessonTitle}>{localize(lesson.title, ui)}</Text>
-                  <Muted>{lesson.items.map((item) => item.text).slice(0, 3).join(' · ')}</Muted>
+                  <Muted style={{ writingDirection: writingDirection(target) }}>
+                    {lesson.items.map((item) => item.text).slice(0, 3).join(' · ')}
+                  </Muted>
                 </View>
                 <Ionicons name="chevron-forward" size={20} color={colors.muted} />
               </Pressable>

@@ -1,3 +1,4 @@
+import { router } from 'expo-router';
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
@@ -7,7 +8,7 @@ import { Body, Button, Card, ErrorText, Heading, Muted, Screen, Title } from '@/
 import type { LanguageCode } from '@/content/types';
 import { allLessons } from '@/lib/course';
 import { errorMessage } from '@/lib/errors';
-import { t } from '@/lib/i18n';
+import { t, type StringKey } from '@/lib/i18n';
 import { useLearner } from '@/lib/session';
 import { spacing } from '@/theme';
 
@@ -49,6 +50,17 @@ export default function ProfileScreen() {
       <StreakCard ui={ui} streak={profile.streak} />
 
       <Card>
+        <Heading>{t(ui, 'yourPlan')}</Heading>
+        <Body>{t(ui, planLabel(profile.plan))}</Body>
+        {profile.plan !== 'free' && profile.planExpiresAt ? (
+          <Muted>{t(ui, 'planActive', { date: profile.planExpiresAt.slice(0, 10) })}</Muted>
+        ) : (
+          <Muted>{t(ui, 'planFreeBody')}</Muted>
+        )}
+        <Button label={t(ui, 'seePlans')} onPress={() => router.push('/plans')} />
+      </Card>
+
+      <Card>
         <View style={styles.statRow}>
           <Muted>{t(ui, 'level')}</Muted>
           <Body style={styles.stat}>{profile.level}</Body>
@@ -87,6 +99,14 @@ export default function ProfileScreen() {
       <Button variant="ghost" label={t(ui, 'signOut')} onPress={signOut} />
     </Screen>
   );
+}
+
+function planLabel(plan: string): StringKey {
+  if (plan === 'day') return 'planDay';
+  if (plan === 'week') return 'planWeek';
+  if (plan === 'month') return 'planMonth';
+  if (plan === 'year') return 'planYear';
+  return 'planFree';
 }
 
 const styles = StyleSheet.create({

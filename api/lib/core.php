@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-const LANGUAGES = ['de', 'en', 'fr'];
+const LANGUAGES = ['de', 'en', 'fr', 'ar', 'it'];
 const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
 final class ApiError extends Exception

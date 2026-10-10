@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import { SafeAreaView, type Edge } from 'react-native-safe-area-context';
 
+import { useSession } from '@/lib/session';
 import { colors, radius, spacing } from '@/theme';
 
 export function Screen({
@@ -23,8 +24,9 @@ export function Screen({
   scroll?: boolean;
   edges?: Edge[];
 }) {
+  const { ui } = useSession();
   return (
-    <SafeAreaView style={styles.screen} edges={edges}>
+    <SafeAreaView style={[styles.screen, { direction: ui === 'ar' ? 'rtl' : 'ltr' }]} edges={edges}>
       {scroll ? (
         <ScrollView contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps="handled">
           {children}
@@ -95,14 +97,24 @@ export function Button({
   );
 }
 
-export function Chip({ label, selected, onPress }: { label: string; selected?: boolean; onPress?: () => void }) {
+export function Chip({
+  label,
+  selected,
+  onPress,
+  rtl,
+}: {
+  label: string;
+  selected?: boolean;
+  onPress?: () => void;
+  rtl?: boolean;
+}) {
   return (
     <Pressable
       accessibilityRole="button"
       accessibilityState={{ selected }}
       onPress={onPress}
       style={[styles.chip, selected && styles.chipSelected]}>
-      <Text style={[styles.chipLabel, selected && styles.chipLabelSelected]}>{label}</Text>
+      <Text style={[styles.chipLabel, rtl && styles.rtlText, selected && styles.chipLabelSelected]}>{label}</Text>
     </Pressable>
   );
 }
@@ -167,6 +179,7 @@ const styles = StyleSheet.create({
   },
   chipSelected: { backgroundColor: colors.primary, borderColor: colors.primary },
   chipLabel: { fontSize: 15, color: colors.text },
+  rtlText: { writingDirection: 'rtl' },
   chipLabelSelected: { color: '#fff', fontWeight: '600' },
   error: { color: colors.danger, fontSize: 14 },
   progressTrack: { height: 8, borderRadius: radius.pill, backgroundColor: colors.border, overflow: 'hidden' },

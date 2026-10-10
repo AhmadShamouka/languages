@@ -14,9 +14,11 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { RecordButton } from '@/components/RecordButton';
+import { WatchAdButton } from '@/components/WatchAdButton';
 import { Body, Button, Chip, ErrorText, Muted, Title } from '@/components/ui';
 import type { LanguageCode } from '@/content/types';
 import { useSpeechRecorder } from '@/hooks/useSpeechRecorder';
+import { ApiError } from '@/lib/api';
 import { playReplyAudio, speak, stopAllAudio } from '@/lib/audio';
 import { allLessons, localize, nextLesson, type LessonRef } from '@/lib/course';
 import { errorMessage } from '@/lib/errors';
@@ -80,6 +82,7 @@ export default function SpeakScreen() {
   const [draft, setDraft] = useState('');
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [limitHit, setLimitHit] = useState(false);
   const nextId = useRef(1);
   const scrollRef = useRef<ScrollView>(null);
 
@@ -118,6 +121,7 @@ export default function SpeakScreen() {
     ]);
     setSending(true);
     setError(null);
+    setLimitHit(false);
     try {
       const result = await chatTurn(profile, utterance, conversation.scenario, history);
       updateStreak(result.streak);
@@ -131,6 +135,7 @@ export default function SpeakScreen() {
       else speak(result.reply, target, 0.95);
     } catch (e) {
       setMessages((current) => current.filter((m) => m.id !== placeholderId));
+      setLimitHit(e instanceof ApiError && e.code === 'daily_limit');
       setError(errorMessage(ui, e));
     } finally {
       setSending(false);
@@ -183,7 +188,13 @@ export default function SpeakScreen() {
           contentContainerStyle={styles.messages}
           onContentSizeChange={() => scrollRef.current?.scrollToEnd({ animated: true })}>
           {messages.map((message) => (
-            <MessageBubble key={message.id} message={message} ui={ui} onReplay={() => speak(message.text, target, 0.95)} />
+            <MessageBubble
+              key={message.id}
+              message={message}
+              ui={ui}
+              rtl={target === 'ar'}
+              onReplay={() => speak(message.text, target, 0.95)}
+            />
           ))}
           {sending && <Muted style={styles.thinking}>{t(ui, 'thinking')}</Muted>}
           {messages.filter((m) => m.role === 'user').length === 0 && conversation.suggestions.length > 0 && (
@@ -191,7 +202,7 @@ export default function SpeakScreen() {
               <Muted>{t(ui, 'trySaying')}</Muted>
               <View style={styles.wrapRow}>
                 {conversation.suggestions.map((line) => (
-                  <Chip key={line} label={line} onPress={() => speak(line, target)} />
+                  <Chip key={line} label={line} rtl={target === 'ar'} onPress={() => speak(line, target)} />
                 ))}
               </View>
             </View>
@@ -201,6 +212,7 @@ export default function SpeakScreen() {
         <View style={styles.inputArea}>
           {recorder.permissionDenied && <ErrorText message={t(ui, 'micDenied')} />}
           <ErrorText message={error} />
+          <WatchAdButton visible={limitHit} onGranted={() => { setLimitHit(false); setError(null); }} />
           {typing ? (
             <View style={styles.typeRow}>
               <TextInput
@@ -238,10 +250,12 @@ export default function SpeakScreen() {
 function MessageBubble({
   message,
   ui,
+  rtl,
   onReplay,
 }: {
   message: Message;
   ui: LanguageCode;
+  rtl: boolean;
   onReplay: () => void;
 }) {
   const [showTranslation, setShowTranslation] = useState(false);
@@ -251,7 +265,7 @@ function MessageBubble({
       <Pressable
         onPress={mine ? undefined : onReplay}
         style={[styles.bubble, mine ? styles.bubbleMine : styles.bubbleTheirs, message.pending && styles.pending]}>
-        <Text style={[styles.bubbleText, mine && styles.bubbleTextMine]}>{message.text}</Text>
+        <Text style={[styles.bubbleText, mine && styles.bubbleTextMine, rtl && { writingDirection: 'rtl' }]}>{message.text}</Text>
         {!mine && message.translation ? (
           showTranslation ? (
             <Text style={styles.translation}>{message.translation}</Text>

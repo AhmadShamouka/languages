@@ -36,6 +36,10 @@ yarn-error.*
 
 # API secrets (copy api/config.example.php to api/config.php)
 api/config.php
+api/play-service-account.json
+
+# Voice clips from live calls
+api/data/
 
 # typescript
 *.tsbuildinfo

@@ -10,20 +10,36 @@ return [
         'password' => 'change-me',
     ],
 
-    'openai' => [
-        'api_key' => 'sk-change-me',
-        'base_url' => 'https://api.openai.com/v1',
-        'transcribe_model' => 'gpt-4o-mini-transcribe',
-        'chat_model' => 'gpt-4o-mini',
-        'tts_model' => 'gpt-4o-mini-tts',
-        'tts_voice' => 'alloy',
+    // Free plans use the free models. Day and month plans use the paid models,
+    // so the Gemini key needs billing turned on before those plans can speak.
+    'gemini' => [
+        'api_key' => 'change-me',
+        'free' => [
+            'transcribe_model' => 'gemini-3.5-transcribe',
+            'chat_model' => 'gemini-3.5-flash-lite',
+            'tts_model' => 'gemini-2.5-flash-preview-tts',
+            'tts_voice' => 'Kore',
+        ],
+        'paid' => [
+            'transcribe_model' => 'gemini-3.5-transcribe',
+            'chat_model' => 'gemini-3.1-pro-preview',
+            'tts_model' => 'gemini-3.8-flash-tts',
+            'tts_voice' => 'Kore',
+        ],
     ],
 
     // Days a sign-in token stays valid.
     'token_days' => 60,
 
-    // Tutor requests allowed per user per day; protects your OpenAI bill.
-    'ai_daily_limit' => 200,
+    // Tutor requests allowed per user per day. Paid plans allow 40 and are also capped by this.
+    'ai_daily_limit' => 40,
+
+    // Google Play package and the service-account JSON used to confirm a purchase.
+    // Create the JSON in Play Console → Setup → API access. Never commit the file.
+    'play' => [
+        'package_name' => 'com.aloro.app',
+        'service_account_json' => __DIR__ . '/play-service-account.json',
+    ],
 
     // Largest accepted recording upload, in bytes.
     'max_audio_bytes' => 5 * 1024 * 1024,

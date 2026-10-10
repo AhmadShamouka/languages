@@ -2,12 +2,60 @@
 
 declare(strict_types=1);
 
+/** Free practice is short. Paid plans remove ads. Each paid plan allows 40 speaking checks a day. */
+function plan_limits(string $plan): array
+{
+    $catalog = [
+        'free' => ['ai' => 15, 'callSeconds' => 180, 'ads' => true],
+        'day' => ['ai' => 40, 'callSeconds' => 900, 'ads' => false],
+        'week' => ['ai' => 40, 'callSeconds' => 900, 'ads' => false],
+        'month' => ['ai' => 40, 'callSeconds' => 1800, 'ads' => false],
+        'year' => ['ai' => 40, 'callSeconds' => 1800, 'ads' => false],
+    ];
+    $limits = $catalog[$plan] ?? $catalog['free'];
+    $cap = (int) (config()['ai_daily_limit'] ?? 200);
+    $limits['ai'] = min($limits['ai'], max(1, $cap));
+    return $limits;
+}
+
+function profile_row(int $userId): ?array
+{
+    $stmt = db()->prepare('SELECT * FROM profiles WHERE user_id = ?');
+    $stmt->execute([$userId]);
+    $row = $stmt->fetch();
+    return $row ?: null;
+}
+
+function active_plan_from_row(array $row): string
+{
+    $plan = $row['plan'] ?? 'free';
+    $expiresAt = $row['plan_expires_at'] ?? null;
+    if ($plan === 'free' || $expiresAt === null || $expiresAt === '') {
+        return 'free';
+    }
+    $expires = new DateTimeImmutable((string) $expiresAt, new DateTimeZone('UTC'));
+    $now = new DateTimeImmutable('now', new DateTimeZone('UTC'));
+    return $expires > $now ? $plan : 'free';
+}
+
+function active_plan(int $userId): string
+{
+    $row = profile_row($userId);
+    return $row ? active_plan_from_row($row) : 'free';
+}
+
 function profile_payload(array $row): array
 {
+    $plan = active_plan_from_row($row);
+    $limits = plan_limits($plan);
     return [
         'nativeLanguage' => $row['native_language'],
         'targetLanguage' => $row['target_language'],
         'level' => $row['level'],
+        'plan' => $plan,
+        'planExpiresAt' => $plan === 'free' ? null : $row['plan_expires_at'],
+        'ads' => $limits['ads'],
+        'callSeconds' => $limits['callSeconds'],
         'streak' => [
             'count' => (int) $row['streak_count'],
             'lastDate' => $row['streak_last_date'],
@@ -17,14 +65,13 @@ function profile_payload(array $row): array
 
 function load_profile(int $userId): ?array
 {
-    $stmt = db()->prepare('SELECT * FROM profiles WHERE user_id = ?');
-    $stmt->execute([$userId]);
-    $row = $stmt->fetch();
+    $row = profile_row($userId);
     return $row ? profile_payload($row) : null;
 }
 
 function me_payload(array $user): array
 {
+    refresh_play_purchase((int) $user['id']);
     $stmt = db()->prepare('SELECT language, lesson_id FROM lesson_progress WHERE user_id = ? ORDER BY completed_at');
     $stmt->execute([$user['id']]);
     $completed = array_map(

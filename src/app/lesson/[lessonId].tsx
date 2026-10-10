@@ -4,14 +4,17 @@ import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { RecordButton } from '@/components/RecordButton';
+import { WatchAdButton } from '@/components/WatchAdButton';
 import { Body, Button, Card, Centered, ErrorText, Muted, ProgressBar, Screen, Title } from '@/components/ui';
 import { useSpeechRecorder } from '@/hooks/useSpeechRecorder';
+import { showLessonAd } from '@/lib/ads';
 import { speak, stopAllAudio } from '@/lib/audio';
-import { findLesson, localize } from '@/lib/course';
+import { findLesson, localize, writingDirection } from '@/lib/course';
 import { errorMessage } from '@/lib/errors';
 import { t } from '@/lib/i18n';
 import { useLearner } from '@/lib/session';
 import { checkSpeech, type CheckResult } from '@/lib/tutor';
+import { ApiError } from '@/lib/api';
 import { colors, radius, spacing } from '@/theme';
 
 export default function LessonScreen() {
@@ -23,6 +26,7 @@ export default function LessonScreen() {
   const [checking, setChecking] = useState(false);
   const [result, setResult] = useState<CheckResult | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [limitHit, setLimitHit] = useState(false);
   const [saving, setSaving] = useState(false);
   const [finished, setFinished] = useState(false);
 
@@ -34,11 +38,13 @@ export default function LessonScreen() {
     if (!item) return;
     setChecking(true);
     setError(null);
+    setLimitHit(false);
     try {
       const response = await checkSpeech(profile, { audioUri: uri }, item.text);
       setResult(response);
       updateStreak(response.streak);
     } catch (e) {
+      setLimitHit(e instanceof ApiError && e.code === 'daily_limit');
       setError(errorMessage(ui, e));
     } finally {
       setChecking(false);
@@ -71,6 +77,7 @@ export default function LessonScreen() {
     setSaving(true);
     try {
       await completeLesson(ref.lesson.id);
+      if (profile.ads) await showLessonAd();
       setFinished(true);
     } catch (e) {
       setError(errorMessage(ui, e));
@@ -120,7 +127,7 @@ export default function LessonScreen() {
       <Card style={styles.itemCard}>
         <Text style={styles.kind}>{t(ui, item.kind)}</Text>
         <Muted style={styles.center}>{localize(item.prompt, ui)}</Muted>
-        <Text style={styles.itemText}>{item.text}</Text>
+        <Text style={[styles.itemText, { writingDirection: writingDirection(profile.targetLanguage) }]}>{item.text}</Text>
         <Body style={[styles.center, styles.gloss]}>{localize(item.gloss, ui)}</Body>
         <Button
           variant="secondary"
@@ -138,6 +145,7 @@ export default function LessonScreen() {
       />
       {recorder.permissionDenied && <ErrorText message={t(ui, 'micDenied')} />}
       <ErrorText message={error} />
+      <WatchAdButton visible={limitHit} onGranted={() => { setLimitHit(false); setError(null); }} />
 
       {result && (
         <View style={[styles.result, result.correct ? styles.resultGood : styles.resultBad]}>

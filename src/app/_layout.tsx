@@ -31,6 +31,8 @@ function RootNavigator() {
       <Stack.Protected guard={signedIn && !!profile}>
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="lesson/[lessonId]" options={{ headerShown: true, headerBackTitle: '', title: '' }} />
+        <Stack.Screen name="game" options={{ headerShown: true, headerBackTitle: '', title: '' }} />
+        <Stack.Screen name="plans" options={{ headerShown: true, headerBackTitle: '', title: '' }} />
       </Stack.Protected>
     </Stack>
   );

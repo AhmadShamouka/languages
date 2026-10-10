@@ -1,15 +1,29 @@
+import ar from '@/content/ar/a1.json';
 import de from '@/content/de/a1.json';
 import en from '@/content/en/a1.json';
 import fr from '@/content/fr/a1.json';
+import it from '@/content/it/a1.json';
 import type { Course, LanguageCode, Lesson, Localized, Unit } from '@/content/types';
 
 const courses: Record<LanguageCode, Course> = {
   de: de as Course,
   en: en as Course,
   fr: fr as Course,
+  ar: ar as Course,
+  it: it as Course,
 };
 
-export const SPEECH_LOCALES: Record<LanguageCode, string> = { de: 'de-DE', en: 'en-US', fr: 'fr-FR' };
+export const SPEECH_LOCALES: Record<LanguageCode, string> = {
+  de: 'de-DE',
+  en: 'en-US',
+  fr: 'fr-FR',
+  ar: 'ar-SA',
+  it: 'it-IT',
+};
+
+export function writingDirection(language: LanguageCode): 'rtl' | 'ltr' {
+  return language === 'ar' ? 'rtl' : 'ltr';
+}
 
 export function getCourse(language: LanguageCode): Course {
   return courses[language];

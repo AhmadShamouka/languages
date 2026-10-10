@@ -40,6 +40,8 @@ interface SessionValue {
   saveProfile: (input: ProfileInput) => Promise<void>;
   completeLesson: (lessonId: string) => Promise<void>;
   updateStreak: (streak: Streak | null | undefined) => void;
+  confirmPurchase: (productId: string, purchaseToken: string) => Promise<void>;
+  grantReward: () => Promise<void>;
 }
 
 const SessionContext = createContext<SessionValue | null>(null);
@@ -154,6 +156,19 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       updateStreak: (streak) => {
         if (streak) setProfile((current) => (current ? { ...current, streak } : current));
       },
+      confirmPurchase: (productId, purchaseToken) =>
+        withAuth(async () => {
+          const result = await apiRequest<{ profile: Profile }>('POST', '/billing/purchase', {
+            productId,
+            purchaseToken,
+          });
+          setProfile(result.profile);
+        }),
+      grantReward: () =>
+        withAuth(async () => {
+          const result = await apiRequest<{ profile: Profile }>('POST', '/billing/reward');
+          setProfile(result.profile);
+        }),
     };
   }, [status, user, profile, completedLessons, authenticate, clearSession, withAuth]);
 

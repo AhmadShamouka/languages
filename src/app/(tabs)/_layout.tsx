@@ -26,6 +26,7 @@ export default function TabLayout() {
       }}>
       <Tabs.Screen name="index" options={{ title: t(ui, 'tabHome'), tabBarIcon: icon('home') }} />
       <Tabs.Screen name="learn" options={{ title: t(ui, 'tabLearn'), tabBarIcon: icon('book') }} />
+      <Tabs.Screen name="call" options={{ title: t(ui, 'tabCall'), tabBarIcon: icon('call') }} />
       <Tabs.Screen name="speak" options={{ title: t(ui, 'tabSpeak'), tabBarIcon: icon('mic') }} />
       <Tabs.Screen name="profile" options={{ title: t(ui, 'tabProfile'), tabBarIcon: icon('person') }} />
     </Tabs>

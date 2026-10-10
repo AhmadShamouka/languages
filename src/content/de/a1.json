@@ -4,240 +4,1386 @@
   "units": [
     {
       "id": "greetings",
-      "title": { "en": "Greetings", "fr": "Salutations" },
+      "title": {
+        "en": "Greetings",
+        "fr": "Salutations",
+        "ar": "تحيات",
+        "it": "Saluti"
+      },
       "lessons": [
         {
           "id": "greetings-1",
-          "title": { "en": "Hello and goodbye", "fr": "Bonjour et au revoir" },
+          "title": {
+            "en": "Hello and goodbye",
+            "fr": "Bonjour et au revoir",
+            "ar": "مرحبا وإلى اللقاء",
+            "it": "Ciao e arrivederci"
+          },
           "items": [
-            { "id": "greetings-1-1", "kind": "word", "text": "Hallo", "gloss": { "en": "Hello", "fr": "Salut" }, "prompt": { "en": "Say hello to a friend", "fr": "Dis bonjour à un ami" } },
-            { "id": "greetings-1-2", "kind": "phrase", "text": "Guten Morgen", "gloss": { "en": "Good morning", "fr": "Bonjour (le matin)" }, "prompt": { "en": "Greet someone in the morning", "fr": "Salue quelqu'un le matin" } },
-            { "id": "greetings-1-3", "kind": "phrase", "text": "Auf Wiedersehen", "gloss": { "en": "Goodbye", "fr": "Au revoir" }, "prompt": { "en": "Say goodbye politely", "fr": "Dis au revoir poliment" } },
-            { "id": "greetings-1-4", "kind": "phrase", "text": "Bis morgen!", "gloss": { "en": "See you tomorrow!", "fr": "À demain !" }, "prompt": { "en": "Say you will see them tomorrow", "fr": "Dis que vous vous voyez demain" } },
-            { "id": "greetings-1-5", "kind": "sentence", "text": "Wie geht es dir?", "gloss": { "en": "How are you?", "fr": "Comment ça va ?" }, "prompt": { "en": "Ask how someone is", "fr": "Demande comment va quelqu'un" } }
+            {
+              "id": "greetings-1-1",
+              "kind": "word",
+              "text": "Hallo",
+              "gloss": {
+                "en": "Hello",
+                "fr": "Salut",
+                "ar": "مرحبا",
+                "it": "Ciao"
+              },
+              "prompt": {
+                "en": "Say hello to a friend",
+                "fr": "Dis bonjour à un ami",
+                "ar": "قل مرحبا لصديق",
+                "it": "Saluta un amico"
+              }
+            },
+            {
+              "id": "greetings-1-2",
+              "kind": "phrase",
+              "text": "Guten Morgen",
+              "gloss": {
+                "en": "Good morning",
+                "fr": "Bonjour (le matin)",
+                "ar": "صباح الخير",
+                "it": "Buongiorno"
+              },
+              "prompt": {
+                "en": "Greet someone in the morning",
+                "fr": "Salue quelqu'un le matin",
+                "ar": "حيّ شخصا في الصباح",
+                "it": "Saluta qualcuno al mattino"
+              }
+            },
+            {
+              "id": "greetings-1-3",
+              "kind": "phrase",
+              "text": "Auf Wiedersehen",
+              "gloss": {
+                "en": "Goodbye",
+                "fr": "Au revoir",
+                "ar": "إلى اللقاء",
+                "it": "Arrivederci"
+              },
+              "prompt": {
+                "en": "Say goodbye politely",
+                "fr": "Dis au revoir poliment",
+                "ar": "ودّع بأدب",
+                "it": "Saluta con gentilezza"
+              }
+            },
+            {
+              "id": "greetings-1-4",
+              "kind": "phrase",
+              "text": "Bis morgen!",
+              "gloss": {
+                "en": "See you tomorrow!",
+                "fr": "À demain !",
+                "ar": "أراك غدا!",
+                "it": "A domani!"
+              },
+              "prompt": {
+                "en": "Say you will see them tomorrow",
+                "fr": "Dis que vous vous voyez demain",
+                "ar": "قل إنكما ستلتقيان غدا",
+                "it": "Di' che vi vedete domani"
+              }
+            },
+            {
+              "id": "greetings-1-5",
+              "kind": "sentence",
+              "text": "Wie geht es dir?",
+              "gloss": {
+                "en": "How are you?",
+                "fr": "Comment ça va ?",
+                "ar": "كيف حالك؟",
+                "it": "Come stai?"
+              },
+              "prompt": {
+                "en": "Ask how someone is",
+                "fr": "Demande comment va quelqu'un",
+                "ar": "اسأل كيف حال شخص",
+                "it": "Chiedi come sta qualcuno"
+              }
+            }
           ],
           "rolePlay": {
             "topic": "Meeting your neighbour in the morning",
-            "goal": { "en": "Greet your neighbour, ask how they are, and say goodbye.", "fr": "Salue ton voisin, demande-lui comment il va et dis au revoir." },
+            "goal": {
+              "en": "Greet your neighbour, ask how they are, and say goodbye.",
+              "fr": "Salue ton voisin, demande-lui comment il va et dis au revoir.",
+              "ar": "حيّ جارك، اسأل كيف حاله، ثم ودّعه.",
+              "it": "Saluta il tuo vicino, chiedi come sta e salutalo."
+            },
             "opening": "Guten Morgen! Wie geht es dir?",
-            "starterLines": ["Guten Morgen!", "Mir geht es gut, danke."]
+            "starterLines": [
+              "Guten Morgen!",
+              "Mir geht es gut, danke."
+            ]
           }
         },
         {
           "id": "greetings-2",
-          "title": { "en": "Introducing yourself", "fr": "Se présenter" },
+          "title": {
+            "en": "Introducing yourself",
+            "fr": "Se présenter",
+            "ar": "عرّف عن نفسك",
+            "it": "Presentarsi"
+          },
           "items": [
-            { "id": "greetings-2-1", "kind": "sentence", "text": "Ich heiße Anna.", "gloss": { "en": "My name is Anna.", "fr": "Je m'appelle Anna." }, "prompt": { "en": "Say your name is Anna", "fr": "Dis que tu t'appelles Anna" } },
-            { "id": "greetings-2-2", "kind": "sentence", "text": "Wie heißt du?", "gloss": { "en": "What's your name?", "fr": "Comment tu t'appelles ?" }, "prompt": { "en": "Ask someone's name", "fr": "Demande le prénom de quelqu'un" } },
-            { "id": "greetings-2-3", "kind": "phrase", "text": "Freut mich!", "gloss": { "en": "Nice to meet you!", "fr": "Enchanté !" }, "prompt": { "en": "Say you're happy to meet them", "fr": "Dis que tu es ravi de faire sa connaissance" } },
-            { "id": "greetings-2-4", "kind": "word", "text": "Bitte", "gloss": { "en": "Please", "fr": "S'il vous plaît" }, "prompt": { "en": "Ask politely", "fr": "Demande poliment" } },
-            { "id": "greetings-2-5", "kind": "word", "text": "Danke", "gloss": { "en": "Thank you", "fr": "Merci" }, "prompt": { "en": "Thank someone", "fr": "Remercie quelqu'un" } }
+            {
+              "id": "greetings-2-1",
+              "kind": "sentence",
+              "text": "Ich heiße Anna.",
+              "gloss": {
+                "en": "My name is Anna.",
+                "fr": "Je m'appelle Anna.",
+                "ar": "اسمي آنا.",
+                "it": "Mi chiamo Anna."
+              },
+              "prompt": {
+                "en": "Say your name is Anna",
+                "fr": "Dis que tu t'appelles Anna",
+                "ar": "قل إن اسمك آنا",
+                "it": "Di' che ti chiami Anna"
+              }
+            },
+            {
+              "id": "greetings-2-2",
+              "kind": "sentence",
+              "text": "Wie heißt du?",
+              "gloss": {
+                "en": "What's your name?",
+                "fr": "Comment tu t'appelles ?",
+                "ar": "ما اسمك؟",
+                "it": "Come ti chiami?"
+              },
+              "prompt": {
+                "en": "Ask someone's name",
+                "fr": "Demande le prénom de quelqu'un",
+                "ar": "اسأل عن الاسم",
+                "it": "Chiedi come si chiama"
+              }
+            },
+            {
+              "id": "greetings-2-3",
+              "kind": "phrase",
+              "text": "Freut mich!",
+              "gloss": {
+                "en": "Nice to meet you!",
+                "fr": "Enchanté !",
+                "ar": "تشرفنا!",
+                "it": "Piacere!"
+              },
+              "prompt": {
+                "en": "Say you're happy to meet them",
+                "fr": "Dis que tu es ravi de faire sa connaissance",
+                "ar": "قل إنك سعيد بلقائهم",
+                "it": "Di' che sei felice di conoscerli"
+              }
+            },
+            {
+              "id": "greetings-2-4",
+              "kind": "word",
+              "text": "Bitte",
+              "gloss": {
+                "en": "Please",
+                "fr": "S'il vous plaît",
+                "ar": "من فضلك",
+                "it": "Per favore"
+              },
+              "prompt": {
+                "en": "Ask politely",
+                "fr": "Demande poliment",
+                "ar": "اطلب بأدب",
+                "it": "Chiedi con gentilezza"
+              }
+            },
+            {
+              "id": "greetings-2-5",
+              "kind": "word",
+              "text": "Danke",
+              "gloss": {
+                "en": "Thank you",
+                "fr": "Merci",
+                "ar": "شكرا",
+                "it": "Grazie"
+              },
+              "prompt": {
+                "en": "Thank someone",
+                "fr": "Remercie quelqu'un",
+                "ar": "اشكر شخصا",
+                "it": "Ringrazia qualcuno"
+              }
+            }
           ],
           "rolePlay": {
             "topic": "Meeting someone new at a party",
-            "goal": { "en": "Introduce yourself, ask their name, and say it's nice to meet them.", "fr": "Présente-toi, demande son prénom et dis que tu es ravi de le rencontrer." },
+            "goal": {
+              "en": "Introduce yourself, ask their name, and say it's nice to meet them.",
+              "fr": "Présente-toi, demande son prénom et dis que tu es ravi de le rencontrer.",
+              "ar": "قدّم نفسك، اسأل عن اسمه، وقل إنك سعيد بلقائه.",
+              "it": "Presentati, chiedi come si chiama e di' che sei felice di conoscerlo."
+            },
             "opening": "Hallo! Ich heiße Lukas. Wie heißt du?",
-            "starterLines": ["Ich heiße ...", "Freut mich!"]
+            "starterLines": [
+              "Ich heiße ...",
+              "Freut mich!"
+            ]
           }
         }
       ]
     },
     {
       "id": "numbers",
-      "title": { "en": "Numbers and time", "fr": "Les nombres et l'heure" },
+      "title": {
+        "en": "Numbers and time",
+        "fr": "Les nombres et l'heure",
+        "ar": "الأرقام والوقت",
+        "it": "Numeri e ora"
+      },
       "lessons": [
         {
           "id": "numbers-1",
-          "title": { "en": "Numbers 1 to 10", "fr": "Les nombres de 1 à 10" },
+          "title": {
+            "en": "Numbers 1 to 10",
+            "fr": "Les nombres de 1 à 10",
+            "ar": "الأرقام من 1 إلى 10",
+            "it": "I numeri da 1 a 10"
+          },
           "items": [
-            { "id": "numbers-1-1", "kind": "word", "text": "eins", "gloss": { "en": "one", "fr": "un" }, "prompt": { "en": "Say the number 1", "fr": "Dis le nombre 1" } },
-            { "id": "numbers-1-2", "kind": "word", "text": "zwei", "gloss": { "en": "two", "fr": "deux" }, "prompt": { "en": "Say the number 2", "fr": "Dis le nombre 2" } },
-            { "id": "numbers-1-3", "kind": "word", "text": "drei", "gloss": { "en": "three", "fr": "trois" }, "prompt": { "en": "Say the number 3", "fr": "Dis le nombre 3" } },
-            { "id": "numbers-1-4", "kind": "word", "text": "zehn", "gloss": { "en": "ten", "fr": "dix" }, "prompt": { "en": "Say the number 10", "fr": "Dis le nombre 10" } },
-            { "id": "numbers-1-5", "kind": "sentence", "text": "Ich möchte drei Tickets, bitte.", "gloss": { "en": "I'd like three tickets, please.", "fr": "Je voudrais trois billets, s'il vous plaît." }, "prompt": { "en": "Ask for three tickets", "fr": "Demande trois billets" } }
+            {
+              "id": "numbers-1-1",
+              "kind": "word",
+              "text": "eins",
+              "gloss": {
+                "en": "one",
+                "fr": "un",
+                "ar": "واحد",
+                "it": "uno"
+              },
+              "prompt": {
+                "en": "Say the number 1",
+                "fr": "Dis le nombre 1",
+                "ar": "قل الرقم 1",
+                "it": "Di' il numero 1"
+              }
+            },
+            {
+              "id": "numbers-1-2",
+              "kind": "word",
+              "text": "zwei",
+              "gloss": {
+                "en": "two",
+                "fr": "deux",
+                "ar": "اثنان",
+                "it": "due"
+              },
+              "prompt": {
+                "en": "Say the number 2",
+                "fr": "Dis le nombre 2",
+                "ar": "قل الرقم 2",
+                "it": "Di' il numero 2"
+              }
+            },
+            {
+              "id": "numbers-1-3",
+              "kind": "word",
+              "text": "drei",
+              "gloss": {
+                "en": "three",
+                "fr": "trois",
+                "ar": "ثلاثة",
+                "it": "tre"
+              },
+              "prompt": {
+                "en": "Say the number 3",
+                "fr": "Dis le nombre 3",
+                "ar": "قل الرقم 3",
+                "it": "Di' il numero 3"
+              }
+            },
+            {
+              "id": "numbers-1-4",
+              "kind": "word",
+              "text": "zehn",
+              "gloss": {
+                "en": "ten",
+                "fr": "dix",
+                "ar": "عشرة",
+                "it": "dieci"
+              },
+              "prompt": {
+                "en": "Say the number 10",
+                "fr": "Dis le nombre 10",
+                "ar": "قل الرقم 10",
+                "it": "Di' il numero 10"
+              }
+            },
+            {
+              "id": "numbers-1-5",
+              "kind": "sentence",
+              "text": "Ich möchte drei Tickets, bitte.",
+              "gloss": {
+                "en": "I'd like three tickets, please.",
+                "fr": "Je voudrais trois billets, s'il vous plaît.",
+                "ar": "أريد ثلاث تذاكر، من فضلك.",
+                "it": "Vorrei tre biglietti, per favore."
+              },
+              "prompt": {
+                "en": "Ask for three tickets",
+                "fr": "Demande trois billets",
+                "ar": "اطلب ثلاث تذاكر",
+                "it": "Chiedi tre biglietti"
+              }
+            }
           ],
           "rolePlay": {
             "topic": "Buying tickets at a cinema counter",
-            "goal": { "en": "Ask for a number of tickets and ask how much they cost.", "fr": "Demande des billets et combien ils coûtent." },
+            "goal": {
+              "en": "Ask for a number of tickets and ask how much they cost.",
+              "fr": "Demande des billets et combien ils coûtent.",
+              "ar": "اطلب عددا من التذاكر واسأل عن السعر.",
+              "it": "Chiedi dei biglietti e quanto costano."
+            },
             "opening": "Hallo! Wie viele Tickets möchten Sie?",
-            "starterLines": ["Zwei Tickets, bitte.", "Wie viel kostet das?"]
+            "starterLines": [
+              "Zwei Tickets, bitte.",
+              "Wie viel kostet das?"
+            ]
           }
         },
         {
           "id": "numbers-2",
-          "title": { "en": "Telling the time", "fr": "Dire l'heure" },
+          "title": {
+            "en": "Telling the time",
+            "fr": "Dire l'heure",
+            "ar": "معرفة الوقت",
+            "it": "Dire l'ora"
+          },
           "items": [
-            { "id": "numbers-2-1", "kind": "sentence", "text": "Wie spät ist es?", "gloss": { "en": "What time is it?", "fr": "Quelle heure est-il ?" }, "prompt": { "en": "Ask for the time", "fr": "Demande l'heure" } },
-            { "id": "numbers-2-2", "kind": "sentence", "text": "Es ist acht Uhr.", "gloss": { "en": "It's eight o'clock.", "fr": "Il est huit heures." }, "prompt": { "en": "Say it is 8:00", "fr": "Dis qu'il est 8 h 00" } },
-            { "id": "numbers-2-3", "kind": "word", "text": "heute", "gloss": { "en": "today", "fr": "aujourd'hui" }, "prompt": { "en": "Say the word for today", "fr": "Dis le mot pour aujourd'hui" } },
-            { "id": "numbers-2-4", "kind": "word", "text": "morgen", "gloss": { "en": "tomorrow", "fr": "demain" }, "prompt": { "en": "Say the word for tomorrow", "fr": "Dis le mot pour demain" } },
-            { "id": "numbers-2-5", "kind": "sentence", "text": "Treffen wir uns um neun?", "gloss": { "en": "Shall we meet at nine?", "fr": "On se retrouve à neuf heures ?" }, "prompt": { "en": "Suggest meeting at nine", "fr": "Propose de se retrouver à neuf heures" } }
+            {
+              "id": "numbers-2-1",
+              "kind": "sentence",
+              "text": "Wie spät ist es?",
+              "gloss": {
+                "en": "What time is it?",
+                "fr": "Quelle heure est-il ?",
+                "ar": "كم الساعة؟",
+                "it": "Che ore sono?"
+              },
+              "prompt": {
+                "en": "Ask for the time",
+                "fr": "Demande l'heure",
+                "ar": "اسأل عن الوقت",
+                "it": "Chiedi l'ora"
+              }
+            },
+            {
+              "id": "numbers-2-2",
+              "kind": "sentence",
+              "text": "Es ist acht Uhr.",
+              "gloss": {
+                "en": "It's eight o'clock.",
+                "fr": "Il est huit heures.",
+                "ar": "الساعة الثامنة.",
+                "it": "Sono le otto."
+              },
+              "prompt": {
+                "en": "Say it is 8:00",
+                "fr": "Dis qu'il est 8 h 00",
+                "ar": "قل إن الساعة الثامنة",
+                "it": "Di' che sono le 8:00"
+              }
+            },
+            {
+              "id": "numbers-2-3",
+              "kind": "word",
+              "text": "heute",
+              "gloss": {
+                "en": "today",
+                "fr": "aujourd'hui",
+                "ar": "اليوم",
+                "it": "oggi"
+              },
+              "prompt": {
+                "en": "Say the word for today",
+                "fr": "Dis le mot pour aujourd'hui",
+                "ar": "قل كلمة اليوم",
+                "it": "Di' la parola per oggi"
+              }
+            },
+            {
+              "id": "numbers-2-4",
+              "kind": "word",
+              "text": "morgen",
+              "gloss": {
+                "en": "tomorrow",
+                "fr": "demain",
+                "ar": "غدا",
+                "it": "domani"
+              },
+              "prompt": {
+                "en": "Say the word for tomorrow",
+                "fr": "Dis le mot pour demain",
+                "ar": "قل كلمة غد",
+                "it": "Di' la parola per domani"
+              }
+            },
+            {
+              "id": "numbers-2-5",
+              "kind": "sentence",
+              "text": "Treffen wir uns um neun?",
+              "gloss": {
+                "en": "Shall we meet at nine?",
+                "fr": "On se retrouve à neuf heures ?",
+                "ar": "هل نلتقي عند التاسعة؟",
+                "it": "Ci vediamo alle nove?"
+              },
+              "prompt": {
+                "en": "Suggest meeting at nine",
+                "fr": "Propose de se retrouver à neuf heures",
+                "ar": "اقترح اللقاء عند التاسعة",
+                "it": "Proponi di vedervi alle nove"
+              }
+            }
           ],
           "rolePlay": {
             "topic": "Arranging a time to meet a friend",
-            "goal": { "en": "Agree on a day and a time to meet.", "fr": "Mettez-vous d'accord sur un jour et une heure." },
+            "goal": {
+              "en": "Agree on a day and a time to meet.",
+              "fr": "Mettez-vous d'accord sur un jour et une heure.",
+              "ar": "اتفقا على يوم ووقت للقاء.",
+              "it": "Mettetevi d'accordo su un giorno e un'ora."
+            },
             "opening": "Hast du morgen Zeit?",
-            "starterLines": ["Ja, morgen habe ich Zeit.", "Treffen wir uns um neun?"]
+            "starterLines": [
+              "Ja, morgen habe ich Zeit.",
+              "Treffen wir uns um neun?"
+            ]
           }
         }
       ]
     },
     {
       "id": "food",
-      "title": { "en": "Food and drink", "fr": "Manger et boire" },
+      "title": {
+        "en": "Food and drink",
+        "fr": "Manger et boire",
+        "ar": "الطعام والشراب",
+        "it": "Cibo e bevande"
+      },
       "lessons": [
         {
           "id": "food-1",
-          "title": { "en": "At the café", "fr": "Au café" },
+          "title": {
+            "en": "At the café",
+            "fr": "Au café",
+            "ar": "في المقهى",
+            "it": "Al bar"
+          },
           "items": [
-            { "id": "food-1-1", "kind": "word", "text": "der Kaffee", "gloss": { "en": "coffee", "fr": "le café" }, "prompt": { "en": "Say the word for coffee", "fr": "Dis le mot pour café" } },
-            { "id": "food-1-2", "kind": "word", "text": "das Wasser", "gloss": { "en": "water", "fr": "l'eau" }, "prompt": { "en": "Say the word for water", "fr": "Dis le mot pour eau" } },
-            { "id": "food-1-3", "kind": "sentence", "text": "Ich hätte gern einen Kaffee, bitte.", "gloss": { "en": "I'd like a coffee, please.", "fr": "Je voudrais un café, s'il vous plaît." }, "prompt": { "en": "Order a coffee", "fr": "Commande un café" } },
-            { "id": "food-1-4", "kind": "phrase", "text": "mit Milch", "gloss": { "en": "with milk", "fr": "avec du lait" }, "prompt": { "en": "Say you want it with milk", "fr": "Dis que tu le veux avec du lait" } },
-            { "id": "food-1-5", "kind": "sentence", "text": "Die Rechnung, bitte.", "gloss": { "en": "The bill, please.", "fr": "L'addition, s'il vous plaît." }, "prompt": { "en": "Ask for the bill", "fr": "Demande l'addition" } }
+            {
+              "id": "food-1-1",
+              "kind": "word",
+              "text": "der Kaffee",
+              "gloss": {
+                "en": "coffee",
+                "fr": "le café",
+                "ar": "قهوة",
+                "it": "caffè"
+              },
+              "prompt": {
+                "en": "Say the word for coffee",
+                "fr": "Dis le mot pour café",
+                "ar": "قل كلمة قهوة",
+                "it": "Di' la parola per caffè"
+              }
+            },
+            {
+              "id": "food-1-2",
+              "kind": "word",
+              "text": "das Wasser",
+              "gloss": {
+                "en": "water",
+                "fr": "l'eau",
+                "ar": "ماء",
+                "it": "acqua"
+              },
+              "prompt": {
+                "en": "Say the word for water",
+                "fr": "Dis le mot pour eau",
+                "ar": "قل كلمة ماء",
+                "it": "Di' la parola per acqua"
+              }
+            },
+            {
+              "id": "food-1-3",
+              "kind": "sentence",
+              "text": "Ich hätte gern einen Kaffee, bitte.",
+              "gloss": {
+                "en": "I'd like a coffee, please.",
+                "fr": "Je voudrais un café, s'il vous plaît.",
+                "ar": "أريد قهوة، من فضلك.",
+                "it": "Vorrei un caffè, per favore."
+              },
+              "prompt": {
+                "en": "Order a coffee",
+                "fr": "Commande un café",
+                "ar": "اطلب قهوة",
+                "it": "Ordina un caffè"
+              }
+            },
+            {
+              "id": "food-1-4",
+              "kind": "phrase",
+              "text": "mit Milch",
+              "gloss": {
+                "en": "with milk",
+                "fr": "avec du lait",
+                "ar": "مع الحليب",
+                "it": "con latte"
+              },
+              "prompt": {
+                "en": "Say you want it with milk",
+                "fr": "Dis que tu le veux avec du lait",
+                "ar": "قل إنك تريده مع الحليب",
+                "it": "Di' che lo vuoi con il latte"
+              }
+            },
+            {
+              "id": "food-1-5",
+              "kind": "sentence",
+              "text": "Die Rechnung, bitte.",
+              "gloss": {
+                "en": "The bill, please.",
+                "fr": "L'addition, s'il vous plaît.",
+                "ar": "الحساب، من فضلك.",
+                "it": "Il conto, per favore."
+              },
+              "prompt": {
+                "en": "Ask for the bill",
+                "fr": "Demande l'addition",
+                "ar": "اطلب الحساب",
+                "it": "Chiedi il conto"
+              }
+            }
           ],
           "rolePlay": {
             "topic": "Ordering at a café",
-            "goal": { "en": "Order a drink, say how you want it, and ask for the bill.", "fr": "Commande une boisson, dis comment tu la veux et demande l'addition." },
+            "goal": {
+              "en": "Order a drink, say how you want it, and ask for the bill.",
+              "fr": "Commande une boisson, dis comment tu la veux et demande l'addition.",
+              "ar": "اطلب مشروبا، قل كيف تريده، ثم اطلب الحساب.",
+              "it": "Ordina una bevanda, di' come la vuoi e chiedi il conto."
+            },
             "opening": "Hallo! Was darf es sein?",
-            "starterLines": ["Einen Kaffee mit Milch, bitte.", "Die Rechnung, bitte."]
+            "starterLines": [
+              "Einen Kaffee mit Milch, bitte.",
+              "Die Rechnung, bitte."
+            ]
           }
         },
         {
           "id": "food-2",
-          "title": { "en": "At the restaurant", "fr": "Au restaurant" },
+          "title": {
+            "en": "At the restaurant",
+            "fr": "Au restaurant",
+            "ar": "في المطعم",
+            "it": "Al ristorante"
+          },
           "items": [
-            { "id": "food-2-1", "kind": "word", "text": "das Brot", "gloss": { "en": "bread", "fr": "le pain" }, "prompt": { "en": "Say the word for bread", "fr": "Dis le mot pour pain" } },
-            { "id": "food-2-2", "kind": "sentence", "text": "Einen Tisch für zwei, bitte.", "gloss": { "en": "A table for two, please.", "fr": "Une table pour deux, s'il vous plaît." }, "prompt": { "en": "Ask for a table for two", "fr": "Demande une table pour deux" } },
-            { "id": "food-2-3", "kind": "sentence", "text": "Was empfehlen Sie?", "gloss": { "en": "What do you recommend?", "fr": "Qu'est-ce que vous recommandez ?" }, "prompt": { "en": "Ask for a recommendation", "fr": "Demande une recommandation" } },
-            { "id": "food-2-4", "kind": "sentence", "text": "Ich bin Vegetarier.", "gloss": { "en": "I'm vegetarian.", "fr": "Je suis végétarien." }, "prompt": { "en": "Say you don't eat meat", "fr": "Dis que tu ne manges pas de viande" } },
-            { "id": "food-2-5", "kind": "sentence", "text": "Das war lecker!", "gloss": { "en": "That was delicious!", "fr": "C'était délicieux !" }, "prompt": { "en": "Say the food was delicious", "fr": "Dis que le repas était délicieux" } }
+            {
+              "id": "food-2-1",
+              "kind": "word",
+              "text": "das Brot",
+              "gloss": {
+                "en": "bread",
+                "fr": "le pain",
+                "ar": "خبز",
+                "it": "pane"
+              },
+              "prompt": {
+                "en": "Say the word for bread",
+                "fr": "Dis le mot pour pain",
+                "ar": "قل كلمة خبز",
+                "it": "Di' la parola per pane"
+              }
+            },
+            {
+              "id": "food-2-2",
+              "kind": "sentence",
+              "text": "Einen Tisch für zwei, bitte.",
+              "gloss": {
+                "en": "A table for two, please.",
+                "fr": "Une table pour deux, s'il vous plaît.",
+                "ar": "طاولة لشخصين، من فضلك.",
+                "it": "Un tavolo per due, per favore."
+              },
+              "prompt": {
+                "en": "Ask for a table for two",
+                "fr": "Demande une table pour deux",
+                "ar": "اطلب طاولة لشخصين",
+                "it": "Chiedi un tavolo per due"
+              }
+            },
+            {
+              "id": "food-2-3",
+              "kind": "sentence",
+              "text": "Was empfehlen Sie?",
+              "gloss": {
+                "en": "What do you recommend?",
+                "fr": "Qu'est-ce que vous recommandez ?",
+                "ar": "ماذا تنصحني؟",
+                "it": "Cosa mi consiglia?"
+              },
+              "prompt": {
+                "en": "Ask for a recommendation",
+                "fr": "Demande une recommandation",
+                "ar": "اطلب اقتراحا",
+                "it": "Chiedi un consiglio"
+              }
+            },
+            {
+              "id": "food-2-4",
+              "kind": "sentence",
+              "text": "Ich bin Vegetarier.",
+              "gloss": {
+                "en": "I'm vegetarian.",
+                "fr": "Je suis végétarien.",
+                "ar": "أنا نباتي.",
+                "it": "Sono vegetariano."
+              },
+              "prompt": {
+                "en": "Say you don't eat meat",
+                "fr": "Dis que tu ne manges pas de viande",
+                "ar": "قل إنك لا تأكل اللحم",
+                "it": "Di' che non mangi carne"
+              }
+            },
+            {
+              "id": "food-2-5",
+              "kind": "sentence",
+              "text": "Das war lecker!",
+              "gloss": {
+                "en": "That was delicious!",
+                "fr": "C'était délicieux !",
+                "ar": "كان هذا لذيذا!",
+                "it": "Era delizioso!"
+              },
+              "prompt": {
+                "en": "Say the food was delicious",
+                "fr": "Dis que le repas était délicieux",
+                "ar": "قل إن الطعام كان لذيذا",
+                "it": "Di' che il cibo era delizioso"
+              }
+            }
           ],
           "rolePlay": {
             "topic": "Ordering dinner at a restaurant",
-            "goal": { "en": "Ask for a table, ask what the waiter recommends, and order a meal.", "fr": "Demande une table et une recommandation, puis commande un plat." },
+            "goal": {
+              "en": "Ask for a table, ask what the waiter recommends, and order a meal.",
+              "fr": "Demande une table et une recommandation, puis commande un plat.",
+              "ar": "اطلب طاولة، اسأل النادل عما ينصح به، ثم اطلب وجبة.",
+              "it": "Chiedi un tavolo, chiedi cosa consiglia il cameriere e ordina un piatto."
+            },
             "opening": "Guten Abend! Haben Sie reserviert?",
-            "starterLines": ["Nein. Einen Tisch für zwei, bitte.", "Was empfehlen Sie?"]
+            "starterLines": [
+              "Nein. Einen Tisch für zwei, bitte.",
+              "Was empfehlen Sie?"
+            ]
           }
         }
       ]
     },
     {
       "id": "directions",
-      "title": { "en": "Directions", "fr": "Demander son chemin" },
+      "title": {
+        "en": "Directions",
+        "fr": "Demander son chemin",
+        "ar": "الاتجاهات",
+        "it": "Indicazioni"
+      },
       "lessons": [
         {
           "id": "directions-1",
-          "title": { "en": "Where is...?", "fr": "Où est... ?" },
+          "title": {
+            "en": "Where is...?",
+            "fr": "Où est... ?",
+            "ar": "أين ...؟",
+            "it": "Dov'è...?"
+          },
           "items": [
-            { "id": "directions-1-1", "kind": "word", "text": "Entschuldigung", "gloss": { "en": "Excuse me", "fr": "Excusez-moi" }, "prompt": { "en": "Politely get someone's attention", "fr": "Interpelle quelqu'un poliment" } },
-            { "id": "directions-1-2", "kind": "sentence", "text": "Wo ist der Bahnhof?", "gloss": { "en": "Where is the train station?", "fr": "Où est la gare ?" }, "prompt": { "en": "Ask where the train station is", "fr": "Demande où est la gare" } },
-            { "id": "directions-1-3", "kind": "word", "text": "links", "gloss": { "en": "left", "fr": "à gauche" }, "prompt": { "en": "Say the word for left", "fr": "Dis le mot pour gauche" } },
-            { "id": "directions-1-4", "kind": "word", "text": "rechts", "gloss": { "en": "right", "fr": "à droite" }, "prompt": { "en": "Say the word for right", "fr": "Dis le mot pour droite" } },
-            { "id": "directions-1-5", "kind": "word", "text": "geradeaus", "gloss": { "en": "straight ahead", "fr": "tout droit" }, "prompt": { "en": "Say to go straight ahead", "fr": "Dis d'aller tout droit" } }
+            {
+              "id": "directions-1-1",
+              "kind": "word",
+              "text": "Entschuldigung",
+              "gloss": {
+                "en": "Excuse me",
+                "fr": "Excusez-moi",
+                "ar": "عفوا",
+                "it": "Mi scusi"
+              },
+              "prompt": {
+                "en": "Politely get someone's attention",
+                "fr": "Interpelle quelqu'un poliment",
+                "ar": "اجذب انتباه شخص بأدب",
+                "it": "Attira l'attenzione con gentilezza"
+              }
+            },
+            {
+              "id": "directions-1-2",
+              "kind": "sentence",
+              "text": "Wo ist der Bahnhof?",
+              "gloss": {
+                "en": "Where is the train station?",
+                "fr": "Où est la gare ?",
+                "ar": "أين محطة القطار؟",
+                "it": "Dov'è la stazione?"
+              },
+              "prompt": {
+                "en": "Ask where the train station is",
+                "fr": "Demande où est la gare",
+                "ar": "اسأل أين محطة القطار",
+                "it": "Chiedi dov'è la stazione"
+              }
+            },
+            {
+              "id": "directions-1-3",
+              "kind": "word",
+              "text": "links",
+              "gloss": {
+                "en": "left",
+                "fr": "à gauche",
+                "ar": "يسار",
+                "it": "sinistra"
+              },
+              "prompt": {
+                "en": "Say the word for left",
+                "fr": "Dis le mot pour gauche",
+                "ar": "قل كلمة يسار",
+                "it": "Di' la parola per sinistra"
+              }
+            },
+            {
+              "id": "directions-1-4",
+              "kind": "word",
+              "text": "rechts",
+              "gloss": {
+                "en": "right",
+                "fr": "à droite",
+                "ar": "يمين",
+                "it": "destra"
+              },
+              "prompt": {
+                "en": "Say the word for right",
+                "fr": "Dis le mot pour droite",
+                "ar": "قل كلمة يمين",
+                "it": "Di' la parola per destra"
+              }
+            },
+            {
+              "id": "directions-1-5",
+              "kind": "word",
+              "text": "geradeaus",
+              "gloss": {
+                "en": "straight ahead",
+                "fr": "tout droit",
+                "ar": "إلى الأمام مباشرة",
+                "it": "sempre dritto"
+              },
+              "prompt": {
+                "en": "Say to go straight ahead",
+                "fr": "Dis d'aller tout droit",
+                "ar": "قل أن يذهب إلى الأمام مباشرة",
+                "it": "Di' di andare sempre dritto"
+              }
+            }
           ],
           "rolePlay": {
             "topic": "Asking a stranger the way to the train station",
-            "goal": { "en": "Get someone's attention, ask where the station is, and thank them.", "fr": "Interpelle quelqu'un, demande où est la gare et remercie-le." },
+            "goal": {
+              "en": "Get someone's attention, ask where the station is, and thank them.",
+              "fr": "Interpelle quelqu'un, demande où est la gare et remercie-le.",
+              "ar": "اجذب انتباه شخص، اسأل عن مكان المحطة، ثم اشكره.",
+              "it": "Attira l'attenzione di qualcuno, chiedi dov'è la stazione e ringrazialo."
+            },
             "opening": "Ja, bitte? Kann ich Ihnen helfen?",
-            "starterLines": ["Entschuldigung, wo ist der Bahnhof?", "Vielen Dank!"]
+            "starterLines": [
+              "Entschuldigung, wo ist der Bahnhof?",
+              "Vielen Dank!"
+            ]
           }
         },
         {
           "id": "directions-2",
-          "title": { "en": "Getting around", "fr": "Se déplacer" },
+          "title": {
+            "en": "Getting around",
+            "fr": "Se déplacer",
+            "ar": "التنقل",
+            "it": "In giro"
+          },
           "items": [
-            { "id": "directions-2-1", "kind": "word", "text": "der Bus", "gloss": { "en": "bus", "fr": "le bus" }, "prompt": { "en": "Say the word for bus", "fr": "Dis le mot pour bus" } },
-            { "id": "directions-2-2", "kind": "word", "text": "der Zug", "gloss": { "en": "train", "fr": "le train" }, "prompt": { "en": "Say the word for train", "fr": "Dis le mot pour train" } },
-            { "id": "directions-2-3", "kind": "sentence", "text": "Wie komme ich zum Museum?", "gloss": { "en": "How do I get to the museum?", "fr": "Comment aller au musée ?" }, "prompt": { "en": "Ask how to get to the museum", "fr": "Demande comment aller au musée" } },
-            { "id": "directions-2-4", "kind": "sentence", "text": "Ist es weit?", "gloss": { "en": "Is it far?", "fr": "C'est loin ?" }, "prompt": { "en": "Ask if it is far", "fr": "Demande si c'est loin" } },
-            { "id": "directions-2-5", "kind": "sentence", "text": "Danke für Ihre Hilfe.", "gloss": { "en": "Thanks for your help.", "fr": "Merci pour votre aide." }, "prompt": { "en": "Thank them for helping", "fr": "Remercie pour l'aide" } }
+            {
+              "id": "directions-2-1",
+              "kind": "word",
+              "text": "der Bus",
+              "gloss": {
+                "en": "bus",
+                "fr": "le bus",
+                "ar": "حافلة",
+                "it": "autobus"
+              },
+              "prompt": {
+                "en": "Say the word for bus",
+                "fr": "Dis le mot pour bus",
+                "ar": "قل كلمة حافلة",
+                "it": "Di' la parola per autobus"
+              }
+            },
+            {
+              "id": "directions-2-2",
+              "kind": "word",
+              "text": "der Zug",
+              "gloss": {
+                "en": "train",
+                "fr": "le train",
+                "ar": "قطار",
+                "it": "treno"
+              },
+              "prompt": {
+                "en": "Say the word for train",
+                "fr": "Dis le mot pour train",
+                "ar": "قل كلمة قطار",
+                "it": "Di' la parola per treno"
+              }
+            },
+            {
+              "id": "directions-2-3",
+              "kind": "sentence",
+              "text": "Wie komme ich zum Museum?",
+              "gloss": {
+                "en": "How do I get to the museum?",
+                "fr": "Comment aller au musée ?",
+                "ar": "كيف أصل إلى المتحف؟",
+                "it": "Come arrivo al museo?"
+              },
+              "prompt": {
+                "en": "Ask how to get to the museum",
+                "fr": "Demande comment aller au musée",
+                "ar": "اسأل كيف تصل إلى المتحف",
+                "it": "Chiedi come arrivare al museo"
+              }
+            },
+            {
+              "id": "directions-2-4",
+              "kind": "sentence",
+              "text": "Ist es weit?",
+              "gloss": {
+                "en": "Is it far?",
+                "fr": "C'est loin ?",
+                "ar": "هل هو بعيد؟",
+                "it": "È lontano?"
+              },
+              "prompt": {
+                "en": "Ask if it is far",
+                "fr": "Demande si c'est loin",
+                "ar": "اسأل إن كان بعيدا",
+                "it": "Chiedi se è lontano"
+              }
+            },
+            {
+              "id": "directions-2-5",
+              "kind": "sentence",
+              "text": "Danke für Ihre Hilfe.",
+              "gloss": {
+                "en": "Thanks for your help.",
+                "fr": "Merci pour votre aide.",
+                "ar": "شكرا لمساعدتك.",
+                "it": "Grazie per l'aiuto."
+              },
+              "prompt": {
+                "en": "Thank them for helping",
+                "fr": "Remercie pour l'aide",
+                "ar": "اشكرهم على المساعدة",
+                "it": "Ringrazia per l'aiuto"
+              }
+            }
           ],
           "rolePlay": {
             "topic": "Asking how to get to the museum by public transport",
-            "goal": { "en": "Ask how to get to the museum, whether it is far, and which bus to take.", "fr": "Demande comment aller au musée, si c'est loin et quel bus prendre." },
+            "goal": {
+              "en": "Ask how to get to the museum, whether it is far, and which bus to take.",
+              "fr": "Demande comment aller au musée, si c'est loin et quel bus prendre.",
+              "ar": "اسأل كيف تصل إلى المتحف، وهل هو بعيد، وأي حافلة تأخذ.",
+              "it": "Chiedi come arrivare al museo, se è lontano e quale autobus prendere."
+            },
             "opening": "Hallo! Wohin möchten Sie?",
-            "starterLines": ["Wie komme ich zum Museum?", "Ist es weit?"]
+            "starterLines": [
+              "Wie komme ich zum Museum?",
+              "Ist es weit?"
+            ]
           }
         }
       ]
     },
     {
       "id": "shopping",
-      "title": { "en": "Shopping", "fr": "Les achats" },
+      "title": {
+        "en": "Shopping",
+        "fr": "Les achats",
+        "ar": "التسوق",
+        "it": "Shopping"
+      },
       "lessons": [
         {
           "id": "shopping-1",
-          "title": { "en": "In a shop", "fr": "Dans un magasin" },
+          "title": {
+            "en": "In a shop",
+            "fr": "Dans un magasin",
+            "ar": "في متجر",
+            "it": "In un negozio"
+          },
           "items": [
-            { "id": "shopping-1-1", "kind": "sentence", "text": "Was kostet das?", "gloss": { "en": "How much is this?", "fr": "Combien ça coûte ?" }, "prompt": { "en": "Ask for the price", "fr": "Demande le prix" } },
-            { "id": "shopping-1-2", "kind": "word", "text": "teuer", "gloss": { "en": "expensive", "fr": "cher" }, "prompt": { "en": "Say the word for expensive", "fr": "Dis le mot pour cher" } },
-            { "id": "shopping-1-3", "kind": "word", "text": "billig", "gloss": { "en": "cheap", "fr": "bon marché" }, "prompt": { "en": "Say the word for cheap", "fr": "Dis le mot pour bon marché" } },
-            { "id": "shopping-1-4", "kind": "sentence", "text": "Ich schaue nur.", "gloss": { "en": "I'm just looking.", "fr": "Je regarde seulement." }, "prompt": { "en": "Say you are only looking", "fr": "Dis que tu regardes seulement" } },
-            { "id": "shopping-1-5", "kind": "sentence", "text": "Ich nehme es.", "gloss": { "en": "I'll take it.", "fr": "Je le prends." }, "prompt": { "en": "Say you will buy it", "fr": "Dis que tu l'achètes" } }
+            {
+              "id": "shopping-1-1",
+              "kind": "sentence",
+              "text": "Was kostet das?",
+              "gloss": {
+                "en": "How much is this?",
+                "fr": "Combien ça coûte ?",
+                "ar": "بكم هذا؟",
+                "it": "Quanto costa?"
+              },
+              "prompt": {
+                "en": "Ask for the price",
+                "fr": "Demande le prix",
+                "ar": "اسأل عن السعر",
+                "it": "Chiedi il prezzo"
+              }
+            },
+            {
+              "id": "shopping-1-2",
+              "kind": "word",
+              "text": "teuer",
+              "gloss": {
+                "en": "expensive",
+                "fr": "cher",
+                "ar": "غال",
+                "it": "caro"
+              },
+              "prompt": {
+                "en": "Say the word for expensive",
+                "fr": "Dis le mot pour cher",
+                "ar": "قل كلمة غال",
+                "it": "Di' la parola per caro"
+              }
+            },
+            {
+              "id": "shopping-1-3",
+              "kind": "word",
+              "text": "billig",
+              "gloss": {
+                "en": "cheap",
+                "fr": "bon marché",
+                "ar": "رخيص",
+                "it": "economico"
+              },
+              "prompt": {
+                "en": "Say the word for cheap",
+                "fr": "Dis le mot pour bon marché",
+                "ar": "قل كلمة رخيص",
+                "it": "Di' la parola per economico"
+              }
+            },
+            {
+              "id": "shopping-1-4",
+              "kind": "sentence",
+              "text": "Ich schaue nur.",
+              "gloss": {
+                "en": "I'm just looking.",
+                "fr": "Je regarde seulement.",
+                "ar": "أنا أشاهد فقط.",
+                "it": "Sto solo guardando."
+              },
+              "prompt": {
+                "en": "Say you are only looking",
+                "fr": "Dis que tu regardes seulement",
+                "ar": "قل إنك تشاهد فقط",
+                "it": "Di' che stai solo guardando"
+              }
+            },
+            {
+              "id": "shopping-1-5",
+              "kind": "sentence",
+              "text": "Ich nehme es.",
+              "gloss": {
+                "en": "I'll take it.",
+                "fr": "Je le prends.",
+                "ar": "سآخذه.",
+                "it": "Lo prendo."
+              },
+              "prompt": {
+                "en": "Say you will buy it",
+                "fr": "Dis que tu l'achètes",
+                "ar": "قل إنك ستشتريه",
+                "it": "Di' che lo compri"
+              }
+            }
           ],
           "rolePlay": {
             "topic": "Buying a souvenir at a market stall",
-            "goal": { "en": "Ask the price, react to it, and decide to buy.", "fr": "Demande le prix, réagis et décide d'acheter." },
+            "goal": {
+              "en": "Ask the price, react to it, and decide to buy.",
+              "fr": "Demande le prix, réagis et décide d'acheter.",
+              "ar": "اسأل عن السعر، علّق عليه، ثم قرر الشراء.",
+              "it": "Chiedi il prezzo, reagisci e decidi se comprare."
+            },
             "opening": "Guten Tag! Suchen Sie etwas Bestimmtes?",
-            "starterLines": ["Ich schaue nur.", "Was kostet das?"]
+            "starterLines": [
+              "Ich schaue nur.",
+              "Was kostet das?"
+            ]
           }
         },
         {
           "id": "shopping-2",
-          "title": { "en": "Clothes and sizes", "fr": "Vêtements et tailles" },
+          "title": {
+            "en": "Clothes and sizes",
+            "fr": "Vêtements et tailles",
+            "ar": "الملابس والمقاسات",
+            "it": "Abiti e taglie"
+          },
           "items": [
-            { "id": "shopping-2-1", "kind": "word", "text": "das Hemd", "gloss": { "en": "shirt", "fr": "la chemise" }, "prompt": { "en": "Say the word for shirt", "fr": "Dis le mot pour chemise" } },
-            { "id": "shopping-2-2", "kind": "word", "text": "die Schuhe", "gloss": { "en": "shoes", "fr": "les chaussures" }, "prompt": { "en": "Say the word for shoes", "fr": "Dis le mot pour chaussures" } },
-            { "id": "shopping-2-3", "kind": "sentence", "text": "Kann ich das anprobieren?", "gloss": { "en": "Can I try this on?", "fr": "Je peux l'essayer ?" }, "prompt": { "en": "Ask to try it on", "fr": "Demande si tu peux l'essayer" } },
-            { "id": "shopping-2-4", "kind": "sentence", "text": "Es ist zu groß.", "gloss": { "en": "It's too big.", "fr": "C'est trop grand." }, "prompt": { "en": "Say it is too big", "fr": "Dis que c'est trop grand" } },
-            { "id": "shopping-2-5", "kind": "sentence", "text": "Haben Sie eine kleinere Größe?", "gloss": { "en": "Do you have a smaller size?", "fr": "Vous avez une taille plus petite ?" }, "prompt": { "en": "Ask for a smaller size", "fr": "Demande une taille plus petite" } }
+            {
+              "id": "shopping-2-1",
+              "kind": "word",
+              "text": "das Hemd",
+              "gloss": {
+                "en": "shirt",
+                "fr": "la chemise",
+                "ar": "قميص",
+                "it": "camicia"
+              },
+              "prompt": {
+                "en": "Say the word for shirt",
+                "fr": "Dis le mot pour chemise",
+                "ar": "قل كلمة قميص",
+                "it": "Di' la parola per camicia"
+              }
+            },
+            {
+              "id": "shopping-2-2",
+              "kind": "word",
+              "text": "die Schuhe",
+              "gloss": {
+                "en": "shoes",
+                "fr": "les chaussures",
+                "ar": "حذاء",
+                "it": "scarpe"
+              },
+              "prompt": {
+                "en": "Say the word for shoes",
+                "fr": "Dis le mot pour chaussures",
+                "ar": "قل كلمة حذاء",
+                "it": "Di' la parola per scarpe"
+              }
+            },
+            {
+              "id": "shopping-2-3",
+              "kind": "sentence",
+              "text": "Kann ich das anprobieren?",
+              "gloss": {
+                "en": "Can I try this on?",
+                "fr": "Je peux l'essayer ?",
+                "ar": "هل يمكنني تجربة هذا؟",
+                "it": "Posso provarlo?"
+              },
+              "prompt": {
+                "en": "Ask to try it on",
+                "fr": "Demande si tu peux l'essayer",
+                "ar": "اطلب تجربته",
+                "it": "Chiedi di provarlo"
+              }
+            },
+            {
+              "id": "shopping-2-4",
+              "kind": "sentence",
+              "text": "Es ist zu groß.",
+              "gloss": {
+                "en": "It's too big.",
+                "fr": "C'est trop grand.",
+                "ar": "إنه كبير جدا.",
+                "it": "È troppo grande."
+              },
+              "prompt": {
+                "en": "Say it is too big",
+                "fr": "Dis que c'est trop grand",
+                "ar": "قل إنه كبير جدا",
+                "it": "Di' che è troppo grande"
+              }
+            },
+            {
+              "id": "shopping-2-5",
+              "kind": "sentence",
+              "text": "Haben Sie eine kleinere Größe?",
+              "gloss": {
+                "en": "Do you have a smaller size?",
+                "fr": "Vous avez une taille plus petite ?",
+                "ar": "هل لديكم مقاس أصغر؟",
+                "it": "Avete una taglia più piccola?"
+              },
+              "prompt": {
+                "en": "Ask for a smaller size",
+                "fr": "Demande une taille plus petite",
+                "ar": "اطلب مقاسا أصغر",
+                "it": "Chiedi una taglia più piccola"
+              }
+            }
           ],
           "rolePlay": {
             "topic": "Trying on clothes in a clothing shop",
-            "goal": { "en": "Ask to try something on, say how it fits, and ask for another size.", "fr": "Demande à essayer un vêtement, dis comment il te va et demande une autre taille." },
+            "goal": {
+              "en": "Ask to try something on, say how it fits, and ask for another size.",
+              "fr": "Demande à essayer un vêtement, dis comment il te va et demande une autre taille.",
+              "ar": "اطلب تجربة شيء، قل كيف يناسبك، ثم اطلب مقاسا آخر.",
+              "it": "Chiedi di provare qualcosa, di' come ti sta e chiedi un'altra taglia."
+            },
             "opening": "Hallo! Kann ich Ihnen helfen?",
-            "starterLines": ["Kann ich das anprobieren?", "Haben Sie eine kleinere Größe?"]
+            "starterLines": [
+              "Kann ich das anprobieren?",
+              "Haben Sie eine kleinere Größe?"
+            ]
           }
         }
       ]
     },
     {
       "id": "routine",
-      "title": { "en": "Daily routine", "fr": "La vie quotidienne" },
+      "title": {
+        "en": "Daily routine",
+        "fr": "La vie quotidienne",
+        "ar": "الروتين اليومي",
+        "it": "La routine quotidiana"
+      },
       "lessons": [
         {
           "id": "routine-1",
-          "title": { "en": "My day", "fr": "Ma journée" },
+          "title": {
+            "en": "My day",
+            "fr": "Ma journée",
+            "ar": "يومي",
+            "it": "La mia giornata"
+          },
           "items": [
-            { "id": "routine-1-1", "kind": "word", "text": "der Morgen", "gloss": { "en": "morning", "fr": "le matin" }, "prompt": { "en": "Say the word for morning", "fr": "Dis le mot pour matin" } },
-            { "id": "routine-1-2", "kind": "word", "text": "der Abend", "gloss": { "en": "evening", "fr": "le soir" }, "prompt": { "en": "Say the word for evening", "fr": "Dis le mot pour soir" } },
-            { "id": "routine-1-3", "kind": "sentence", "text": "Ich stehe um sieben Uhr auf.", "gloss": { "en": "I get up at seven o'clock.", "fr": "Je me lève à sept heures." }, "prompt": { "en": "Say you get up at 7:00", "fr": "Dis que tu te lèves à 7 h 00" } },
-            { "id": "routine-1-4", "kind": "sentence", "text": "Ich frühstücke zu Hause.", "gloss": { "en": "I have breakfast at home.", "fr": "Je prends le petit-déjeuner à la maison." }, "prompt": { "en": "Say you have breakfast at home", "fr": "Dis que tu prends le petit-déjeuner à la maison" } },
-            { "id": "routine-1-5", "kind": "sentence", "text": "Ich fahre mit dem Bus zur Arbeit.", "gloss": { "en": "I go to work by bus.", "fr": "Je vais au travail en bus." }, "prompt": { "en": "Say you take the bus to work", "fr": "Dis que tu vas au travail en bus" } }
+            {
+              "id": "routine-1-1",
+              "kind": "word",
+              "text": "der Morgen",
+              "gloss": {
+                "en": "morning",
+                "fr": "le matin",
+                "ar": "صباح",
+                "it": "mattina"
+              },
+              "prompt": {
+                "en": "Say the word for morning",
+                "fr": "Dis le mot pour matin",
+                "ar": "قل كلمة صباح",
+                "it": "Di' la parola per mattina"
+              }
+            },
+            {
+              "id": "routine-1-2",
+              "kind": "word",
+              "text": "der Abend",
+              "gloss": {
+                "en": "evening",
+                "fr": "le soir",
+                "ar": "مساء",
+                "it": "sera"
+              },
+              "prompt": {
+                "en": "Say the word for evening",
+                "fr": "Dis le mot pour soir",
+                "ar": "قل كلمة مساء",
+                "it": "Di' la parola per sera"
+              }
+            },
+            {
+              "id": "routine-1-3",
+              "kind": "sentence",
+              "text": "Ich stehe um sieben Uhr auf.",
+              "gloss": {
+                "en": "I get up at seven o'clock.",
+                "fr": "Je me lève à sept heures.",
+                "ar": "أستيقظ في الساعة السابعة.",
+                "it": "Mi alzo alle sette."
+              },
+              "prompt": {
+                "en": "Say you get up at 7:00",
+                "fr": "Dis que tu te lèves à 7 h 00",
+                "ar": "قل إنك تستيقظ عند السابعة",
+                "it": "Di' che ti alzi alle 7:00"
+              }
+            },
+            {
+              "id": "routine-1-4",
+              "kind": "sentence",
+              "text": "Ich frühstücke zu Hause.",
+              "gloss": {
+                "en": "I have breakfast at home.",
+                "fr": "Je prends le petit-déjeuner à la maison.",
+                "ar": "أتناول الفطور في المنزل.",
+                "it": "Faccio colazione a casa."
+              },
+              "prompt": {
+                "en": "Say you have breakfast at home",
+                "fr": "Dis que tu prends le petit-déjeuner à la maison",
+                "ar": "قل إنك تتناول الفطور في المنزل",
+                "it": "Di' che fai colazione a casa"
+              }
+            },
+            {
+              "id": "routine-1-5",
+              "kind": "sentence",
+              "text": "Ich fahre mit dem Bus zur Arbeit.",
+              "gloss": {
+                "en": "I go to work by bus.",
+                "fr": "Je vais au travail en bus.",
+                "ar": "أذهب إلى العمل بالحافلة.",
+                "it": "Vado al lavoro in autobus."
+              },
+              "prompt": {
+                "en": "Say you take the bus to work",
+                "fr": "Dis que tu vas au travail en bus",
+                "ar": "قل إنك تذهب إلى العمل بالحافلة",
+                "it": "Di' che vai al lavoro in autobus"
+              }
+            }
           ],
           "rolePlay": {
             "topic": "Telling a new colleague about your daily routine",
-            "goal": { "en": "Describe when you get up and how you get to work, then ask about their day.", "fr": "Raconte quand tu te lèves et comment tu vas au travail, puis pose des questions sur sa journée." },
+            "goal": {
+              "en": "Describe when you get up and how you get to work, then ask about their day.",
+              "fr": "Raconte quand tu te lèves et comment tu vas au travail, puis pose des questions sur sa journée.",
+              "ar": "صف متى تستيقظ وكيف تذهب إلى العمل، ثم اسأل عن يومه.",
+              "it": "Racconta quando ti alzi e come vai al lavoro, poi chiedi della sua giornata."
+            },
             "opening": "Wann stehst du normalerweise auf?",
-            "starterLines": ["Ich stehe um sieben Uhr auf.", "Ich fahre mit dem Bus zur Arbeit."]
+            "starterLines": [
+              "Ich stehe um sieben Uhr auf.",
+              "Ich fahre mit dem Bus zur Arbeit."
+            ]
           }
         },
         {
           "id": "routine-2",
-          "title": { "en": "Free time", "fr": "Les loisirs" },
+          "title": {
+            "en": "Free time",
+            "fr": "Les loisirs",
+            "ar": "وقت الفراغ",
+            "it": "Tempo libero"
+          },
           "items": [
-            { "id": "routine-2-1", "kind": "word", "text": "die Musik", "gloss": { "en": "music", "fr": "la musique" }, "prompt": { "en": "Say the word for music", "fr": "Dis le mot pour musique" } },
-            { "id": "routine-2-2", "kind": "word", "text": "der Sport", "gloss": { "en": "sport", "fr": "le sport" }, "prompt": { "en": "Say the word for sport", "fr": "Dis le mot pour sport" } },
-            { "id": "routine-2-3", "kind": "sentence", "text": "Ich lese gern.", "gloss": { "en": "I like reading.", "fr": "J'aime lire." }, "prompt": { "en": "Say you like reading", "fr": "Dis que tu aimes lire" } },
-            { "id": "routine-2-4", "kind": "sentence", "text": "Am Wochenende spiele ich Fußball.", "gloss": { "en": "At the weekend I play football.", "fr": "Le week-end, je joue au foot." }, "prompt": { "en": "Say you play football at the weekend", "fr": "Dis que tu joues au foot le week-end" } },
-            { "id": "routine-2-5", "kind": "sentence", "text": "Was machst du in deiner Freizeit?", "gloss": { "en": "What do you do in your free time?", "fr": "Qu'est-ce que tu fais pendant ton temps libre ?" }, "prompt": { "en": "Ask about their hobbies", "fr": "Demande quels sont ses loisirs" } }
+            {
+              "id": "routine-2-1",
+              "kind": "word",
+              "text": "die Musik",
+              "gloss": {
+                "en": "music",
+                "fr": "la musique",
+                "ar": "موسيقى",
+                "it": "musica"
+              },
+              "prompt": {
+                "en": "Say the word for music",
+                "fr": "Dis le mot pour musique",
+                "ar": "قل كلمة موسيقى",
+                "it": "Di' la parola per musica"
+              }
+            },
+            {
+              "id": "routine-2-2",
+              "kind": "word",
+              "text": "der Sport",
+              "gloss": {
+                "en": "sport",
+                "fr": "le sport",
+                "ar": "رياضة",
+                "it": "sport"
+              },
+              "prompt": {
+                "en": "Say the word for sport",
+                "fr": "Dis le mot pour sport",
+                "ar": "قل كلمة رياضة",
+                "it": "Di' la parola per sport"
+              }
+            },
+            {
+              "id": "routine-2-3",
+              "kind": "sentence",
+              "text": "Ich lese gern.",
+              "gloss": {
+                "en": "I like reading.",
+                "fr": "J'aime lire.",
+                "ar": "أحب القراءة.",
+                "it": "Mi piace leggere."
+              },
+              "prompt": {
+                "en": "Say you like reading",
+                "fr": "Dis que tu aimes lire",
+                "ar": "قل إنك تحب القراءة",
+                "it": "Di' che ti piace leggere"
+              }
+            },
+            {
+              "id": "routine-2-4",
+              "kind": "sentence",
+              "text": "Am Wochenende spiele ich Fußball.",
+              "gloss": {
+                "en": "At the weekend I play football.",
+                "fr": "Le week-end, je joue au foot.",
+                "ar": "في عطلة نهاية الأسبوع ألعب كرة القدم.",
+                "it": "Nel fine settimana gioco a calcio."
+              },
+              "prompt": {
+                "en": "Say you play football at the weekend",
+                "fr": "Dis que tu joues au foot le week-end",
+                "ar": "قل إنك تلعب كرة القدم في عطلة نهاية الأسبوع",
+                "it": "Di' che giochi a calcio nel fine settimana"
+              }
+            },
+            {
+              "id": "routine-2-5",
+              "kind": "sentence",
+              "text": "Was machst du in deiner Freizeit?",
+              "gloss": {
+                "en": "What do you do in your free time?",
+                "fr": "Qu'est-ce que tu fais pendant ton temps libre ?",
+                "ar": "ماذا تفعل في وقت فراغك؟",
+                "it": "Cosa fai nel tempo libero?"
+              },
+              "prompt": {
+                "en": "Ask about their hobbies",
+                "fr": "Demande quels sont ses loisirs",
+                "ar": "اسأل عن هواياته",
+                "it": "Chiedi dei suoi hobby"
+              }
+            }
           ],
           "rolePlay": {
             "topic": "Chatting about hobbies with a new friend",
-            "goal": { "en": "Say what you like doing and ask what they do in their free time.", "fr": "Dis ce que tu aimes faire et demande ce qu'il fait pendant son temps libre." },
+            "goal": {
+              "en": "Say what you like doing and ask what they do in their free time.",
+              "fr": "Dis ce que tu aimes faire et demande ce qu'il fait pendant son temps libre.",
+              "ar": "قل ما تحب أن تفعل، واسأل ماذا يفعل في وقت فراغه.",
+              "it": "Di' cosa ti piace fare e chiedi cosa fa nel tempo libero."
+            },
             "opening": "Was machst du gern am Wochenende?",
-            "starterLines": ["Ich lese gern.", "Und du? Was machst du in deiner Freizeit?"]
+            "starterLines": [
+              "Ich lese gern.",
+              "Und du? Was machst du in deiner Freizeit?"
+            ]
           }
         }
       ]

@@ -1,6 +1,6 @@
-export type LanguageCode = 'de' | 'en' | 'fr';
+export type LanguageCode = 'de' | 'en' | 'fr' | 'ar' | 'it';
 
-/** Text in the learner's native language. Each course file covers the two languages it is not teaching. */
+/** Text in the learner's native language. Each course file covers every language it is not teaching. */
 export type Localized = Partial<Record<LanguageCode, string>>;
 
 export type ItemKind = 'word' | 'phrase' | 'sentence';

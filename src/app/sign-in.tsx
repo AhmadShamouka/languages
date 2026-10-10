@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { KeyboardAvoidingView, Platform, StyleSheet, TextInput, View } from 'react-native';
+import { Image, KeyboardAvoidingView, Platform, StyleSheet, TextInput, View } from 'react-native';
 
 import { Body, Button, ErrorText, Muted, Screen, Title } from '@/components/ui';
 import { errorMessage } from '@/lib/errors';
@@ -30,6 +30,12 @@ export default function SignInScreen() {
     <KeyboardAvoidingView style={styles.fill} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       <Screen edges={['top', 'bottom']}>
         <View style={styles.header}>
+          <Image
+            source={require('../../assets/icon.png')}
+            style={styles.logo}
+            accessible={false}
+            accessibilityIgnoresInvertColors
+          />
           <Title>{t(ui, 'appName')}</Title>
           <Body style={styles.tagline}>{t(ui, 'tagline')}</Body>
         </View>
@@ -82,6 +88,7 @@ export default function SignInScreen() {
 const styles = StyleSheet.create({
   fill: { flex: 1 },
   header: { marginTop: spacing.xl * 2, gap: spacing.sm },
+  logo: { width: 88, height: 88, borderRadius: 22 },
   tagline: { color: colors.muted },
   form: { marginTop: spacing.xl, gap: spacing.md },
   input: {

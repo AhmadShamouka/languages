@@ -48,6 +48,8 @@ export default function HomeScreen() {
         )}
       </Card>
 
+      <Button variant="secondary" label={t(ui, 'playGame')} onPress={() => router.push('/game')} />
+      <Button variant="secondary" label={t(ui, 'findPartner')} onPress={() => router.navigate('/call')} />
       <Button variant="secondary" label={t(ui, 'practiceSpeaking')} onPress={() => router.navigate('/speak')} />
     </Screen>
   );

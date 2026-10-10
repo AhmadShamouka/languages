@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-const LANGUAGE_NAMES = ['de' => 'German', 'en' => 'English', 'fr' => 'French'];
+const LANGUAGE_NAMES = ['de' => 'German', 'en' => 'English', 'fr' => 'French', 'ar' => 'Arabic', 'it' => 'Italian'];
 const AUDIO_EXTENSIONS = ['m4a', 'mp4', 'mp3', 'mpeg', 'mpga', 'wav', 'webm', 'ogg', 'flac', 'aac'];
 const MAX_HISTORY_TURNS = 12;
 
@@ -13,16 +13,17 @@ function count_ai_request(int $userId): void
         'INSERT INTO ai_usage (user_id, day, requests) VALUES (?, UTC_DATE(), 1)
          ON DUPLICATE KEY UPDATE requests = requests + 1'
     )->execute([$userId]);
-    $stmt = $db->prepare('SELECT requests FROM ai_usage WHERE user_id = ? AND day = UTC_DATE()');
+    $stmt = $db->prepare('SELECT requests, bonus FROM ai_usage WHERE user_id = ? AND day = UTC_DATE()');
     $stmt->execute([$userId]);
-    $limit = (int) (config()['ai_daily_limit'] ?? 200);
-    if ((int) $stmt->fetchColumn() > $limit) {
+    $usage = $stmt->fetch() ?: ['requests' => 0, 'bonus' => 0];
+    $limit = plan_limits(active_plan($userId))['ai'] + (int) $usage['bonus'];
+    if ((int) $usage['requests'] > $limit) {
         throw new ApiError(429, 'daily_limit', 'You have reached today\'s speaking limit. Come back tomorrow!');
     }
 }
 
 /** Text the learner said: transcribed from the uploaded recording, or typed. */
-function learner_utterance(array $input, string $language): string
+function learner_utterance(array $input, string $language, array $models): string
 {
     $file = $_FILES['audio'] ?? null;
     if ($file !== null && ($file['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_NO_FILE) {
@@ -37,7 +38,7 @@ function learner_utterance(array $input, string $language): string
             throw new ApiError(422, 'audio_format', 'Unsupported recording format.');
         }
         $mime = is_string($file['type'] ?? null) && $file['type'] !== '' ? $file['type'] : 'application/octet-stream';
-        return openai_transcribe($file['tmp_name'], "speech.$extension", $mime, $language);
+        return gemini_transcribe($file['tmp_name'], $mime, $language, $models);
     }
     return str_field($input, 'text', 500, false) ?? '';
 }
@@ -49,7 +50,7 @@ function normalize_utterance(string $text): string
     return trim(preg_replace('/\s+/u', ' ', $text));
 }
 
-function check_utterance(string $transcript, string $expected, string $target, string $native, string $level): array
+function check_utterance(string $transcript, string $expected, string $target, string $native, string $level, array $models): array
 {
     if (normalize_utterance($transcript) === normalize_utterance($expected)) {
         return ['correct' => true, 'feedback' => null];
@@ -66,10 +67,10 @@ Write feedback in $nativeName, at most two short sentences. If incorrect, name t
 PROMPT;
     $user = json_encode(['expected' => $expected, 'heard' => $transcript], JSON_UNESCAPED_UNICODE);
 
-    $result = openai_json_chat([
+    $result = gemini_json_chat([
         ['role' => 'system', 'content' => $system],
         ['role' => 'user', 'content' => $user],
-    ], 0.2);
+    ], 0.2, $models);
 
     return [
         'correct' => (bool) ($result['correct'] ?? false),
@@ -77,7 +78,7 @@ PROMPT;
     ];
 }
 
-function chat_turn(string $transcript, array $scenario, array $history, string $target, string $native, string $level): array
+function chat_turn(string $transcript, array $scenario, array $history, string $target, string $native, string $level, array $models): array
 {
     $targetName = LANGUAGE_NAMES[$target];
     $nativeName = LANGUAGE_NAMES[$native];
@@ -104,16 +105,16 @@ PROMPT;
     }
     $messages[] = ['role' => 'user', 'content' => $transcript];
 
-    $result = openai_json_chat($messages, 0.7);
+    $result = gemini_json_chat($messages, 0.7, $models);
     $reply = trim((string) ($result['reply'] ?? ''));
     if ($reply === '') {
-        throw new OpenAiError('OpenAI chat returned an empty reply.');
+        throw new AiError('Gemini chat returned an empty reply.');
     }
 
     $audio = null;
     try {
-        $audio = openai_speech($reply, "Speak clearly and a little slowly, like a patient $targetName teacher.");
-    } catch (OpenAiError $e) {
+        $audio = gemini_speech($reply, $models);
+    } catch (AiError $e) {
         error_log('TTS failed: ' . $e->getMessage());
     }
 
@@ -122,7 +123,7 @@ PROMPT;
         'translation' => is_string($result['translation'] ?? null) ? $result['translation'] : null,
         'correction' => is_string($result['correction'] ?? null) && trim($result['correction']) !== '' ? $result['correction'] : null,
         'audioBase64' => $audio,
-        'audioMimeType' => $audio !== null ? 'audio/mpeg' : null,
+        'audioMimeType' => $audio !== null ? 'audio/wav' : null,
     ];
 }
 
@@ -139,19 +140,20 @@ function tutor_request(array $user): array
     $day = day_field($input);
 
     count_ai_request($user['id']);
+    $models = gemini_models(active_plan($user['id']) !== 'free');
 
-    $transcript = learner_utterance($input, $target);
+    $transcript = learner_utterance($input, $target, $models);
     if ($transcript === '') {
         throw new ApiError(422, 'nothing_heard', 'We could not hear anything. Try again a little louder.');
     }
 
     if ($mode === 'check') {
         $expected = str_field($input, 'expected', 300);
-        $result = check_utterance($transcript, $expected, $target, $native, $level);
+        $result = check_utterance($transcript, $expected, $target, $native, $level, $models);
     } else {
         $scenario = json_field($input, 'scenario') ?? [];
         $history = json_field($input, 'history') ?? [];
-        $result = chat_turn($transcript, $scenario, $history, $target, $native, $level);
+        $result = chat_turn($transcript, $scenario, $history, $target, $native, $level, $models);
     }
 
     return ['transcript' => $transcript] + $result + ['streak' => record_practice($user['id'], $day)];

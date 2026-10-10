@@ -1,0 +1,17 @@
+{
+  "cli": {
+    "version": ">= 16.0.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "production": {
+      "node": "20.19.4",
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://languages.ahmadshamouka.cloud"
+      },
+      "android": {
+        "buildType": "app-bundle"
+      }
+    }
+  }
+}

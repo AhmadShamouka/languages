@@ -1,8 +1,8 @@
-// Checks that the three course files stay structurally identical and fully translated.
+// Checks that every course file stays structurally identical and fully translated.
 // Run with: npm run validate:content
 import { readFileSync } from 'node:fs';
 
-const LANGUAGES = ['de', 'en', 'fr'];
+const LANGUAGES = ['de', 'en', 'fr', 'ar', 'it'];
 const KINDS = ['word', 'phrase', 'sentence'];
 const errors = [];
 
